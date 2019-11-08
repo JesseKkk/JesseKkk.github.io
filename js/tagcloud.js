@@ -11,11 +11,11 @@ function addLoadEvent(func) {
 addLoadEvent(function() {
    console.log('tag cloud plugin rock and roll!');
    try {
-       TagCanvas.textFont = 'Helvetica';
-       TagCanvas.textColour = '#333';
-       TagCanvas.textHeight = 15;
-       TagCanvas.outlineColour = '#E2E1C1';
-       TagCanvas.maxSpeed = 0.03;
+       TagCanvas.textFont = 'Trebuchet MS, Helvetica';
+       TagCanvas.textColour = '#483D8B	';
+       TagCanvas.textHeight = 25;
+       TagCanvas.outlineColour = '#F5F5DC';
+       TagCanvas.maxSpeed = 0.6;
        TagCanvas.outlineMethod = 'block';
        TagCanvas.minBrightness = 0.2;
        TagCanvas.depth = 0.92;
