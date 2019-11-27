@@ -51,15 +51,17 @@
   };
 </script>
 
-  <meta name="description" content="前言总结git的常用命令 安装安装地址：http:&#x2F;&#x2F;git-scm.com Git的配置git config --global user.name &amp;quot;Jesse&amp;quot;               #Git配置 git config --global user.email &amp;quot;kongjinxing0@gmail.com&amp;quot; git config --global">
+  <meta name="description" content="前言总结git的常用命令 安装安装地址：http:&#x2F;&#x2F;git-scm.com 配置及创建配置git config --global user.name &amp;quot;Jesse&amp;quot; #Git配置 git config --global user.email &amp;quot;kongjinxing0@gmail.com&amp;quot; git config --global color-ui true">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常用命令">
 <meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;7065.html">
 <meta property="og:site_name" content="Star">
-<meta property="og:description" content="前言总结git的常用命令 安装安装地址：http:&#x2F;&#x2F;git-scm.com Git的配置git config --global user.name &amp;quot;Jesse&amp;quot;               #Git配置 git config --global user.email &amp;quot;kongjinxing0@gmail.com&amp;quot; git config --global">
+<meta property="og:description" content="前言总结git的常用命令 安装安装地址：http:&#x2F;&#x2F;git-scm.com 配置及创建配置git config --global user.name &amp;quot;Jesse&amp;quot; #Git配置 git config --global user.email &amp;quot;kongjinxing0@gmail.com&amp;quot; git config --global color-ui true">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-20T05:52:04.154Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-26_220410.png">
+<meta property="og:updated_time" content="2019-11-27T07:13:55.195Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-26_220410.png">
 
 <link rel="canonical" href="https://jessekkk.github.io/posts/7065.html">
 
@@ -219,7 +221,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 05:52:04" itemprop="dateModified" datetime="2019-11-20T05:52:04Z">2019-11-20</time>
+                <time title="修改时间：2019-11-27 07:13:55" itemprop="dateModified" datetime="2019-11-27T07:13:55Z">2019-11-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,14 +248,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>827</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -267,30 +269,57 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总结git的常用命令</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装地址：<a href="http://git-scm.com" target="_blank" rel="noopener">http://git-scm.com</a></p>
-<h2 id="Git的配置"><a href="#Git的配置" class="headerlink" title="Git的配置"></a>Git的配置</h2><pre><code>git config --global user.name &quot;Jesse&quot;               #Git配置
+<h2 id="配置及创建"><a href="#配置及创建" class="headerlink" title="配置及创建"></a>配置及创建</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><pre><code>git config --global user.name &quot;Jesse&quot; #Git配置
 git config --global user.email &quot;kongjinxing0@gmail.com&quot;
 git config --global color-ui true
 git config --global alias.it init 
-
 &lt;https://github.com/markgandolfo/git-bash-completion&gt; #补全
 echo  source ~/git-completion.bash &gt;&gt; ~/.bashrc
-
 --global: 修改当前用户的全局配置文件 ~/.gitconfig
 --system: 修改所有用户的全局配置文件 /etc/gitconfig
-无参数：   修改本地仓库的配置文件    .git/config</code></pre><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>git init                #新建仓库
-git config              #Git配置
-git add、git commit     #工作区修改、保存修改、提交修改
-git status              #查看状态
-git log                 #查看提交历史
-git diff                #查看提交差异
-git show                #查看某个提交具体修改
-git clone               #克隆一个远程仓库
-git rm -rf              #删除文件
-git reset               #恢复
-git grep                #查看提交历史
-git revert              #提交修改
-git rebase              #重新排序
-git merge               #分支合并</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+无参数：   修改本地仓库的配置文件    .git/config</code></pre><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><pre><code>git init                #创建仓库
+git add file           #提交文件到暂存区
+git commit -m &lt;message&gt; #提交所有文件到版本库</code></pre><h2 id="时光穿梭"><a href="#时光穿梭" class="headerlink" title="时光穿梭"></a>时光穿梭</h2><pre><code>git status              #查看状态
+git show SHA            #查看某个提交信息
+git diff file           #查看提交差异    </code></pre><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><pre><code>git log --pretty=oneline #单行显示
+git log -p              #显示每次提交具体的修改
+gitk                    #图形化显示提交历史
+git reset SHA           #回退版本到工作目录
+git reset --soft SHA    #回退版本到暂存区
+git reset --hard SHA    #回退版本，修改丢弃
+git reflog              #显示每次操作命令</code></pre><h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><pre><code>git checkout file         #撤销工作区修改
+git restore --staged file #撤销暂存区到工作区   
+git commit --amend        #修改最后一次提交   </code></pre><h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><pre><code>git rm file             #从工作目录和暂存区中删除文件</code></pre><h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><pre><code>git clone url          #从远程仓库克隆
+git remote add  主机名 仓库地址 #添加远程仓库地址
+git remote -v           #查看远程仓库信息    
+git remote rm 主机名    #删除远程仓库
+git remote rename &lt;old&gt; &lt;new&gt; #远程仓库重命名
+git fetch&lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt; #拉取远程更新到本地仓库
+git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt; #拉取远程跟新并合并到本地仓库
+git push &lt;远程主机&gt; &lt;本地分支&gt;:&lt;远程分支&gt; #推送本地修改到远程仓库
+git remote show origin #查看远程分支和本地分支的对应关系
+git branch b1 origin/b1 #跟踪远程分支
+git push orgin :b1      #删除远程分支</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建合并分支"><a href="#创建合并分支" class="headerlink" title="创建合并分支"></a>创建合并分支</h3><pre><code>git branch              #查看分支
+git branch &lt;name&gt;       #创建分支
+git switch              #切换分支
+git switch -c &lt;name&gt;    #创建+切换分支
+git merge  dev          #分支合并Fast-forward 
+git merge --no-ff -m &lt;message&gt; dev #合并分支no-ff 
+git merge --squash dev  #压合合并squash      
+git branch -d           #删除分支
+git branch -D           #强制删除没有合并的分支    </code></pre><h3 id="分支冲突解决"><a href="#分支冲突解决" class="headerlink" title="分支冲突解决"></a>分支冲突解决</h3><pre><code>git mergetool           #分支冲突解决工具
+git log --graph         #查看分支合并图</code></pre><h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><p><img src="/images/2019-11-26_220410.png" alt="图片"></p>
+<h3 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h3><pre><code>git stash               #分支修改隐藏
+git stach pop           #恢复分支
+git cherry-pick SHA     #合并单个提交</code></pre><h3 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h3><pre><code>git swtich dev
+git rebase master       #分支衍合
+git fetch 
+git rebase origin/master #拉取远程分支衍合</code></pre><h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><pre><code>git tag v1.0            #添加本地标签
+git tag                 #查看本地标签
+git tag -d v1.0         #删除本地标签
+git push origin v1.0    #推送某个标签
+git push origin --tags  #推送所有标签
+git push origin  :refs/tags/v1.0 #删除远程标签</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><p>廖雪峰的官方网站：<br><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000</a></p>
 </li>
 <li><p>Git零基础实战教程：<br><a href="https://edu.51cto.com/course/5939.html" target="_blank" rel="noopener">https://edu.51cto.com/course/5939.html</a>  </p>
@@ -382,7 +411,7 @@ git merge               #分支合并</code></pre><h2 id="参考"><a href="#参�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的配置"><span class="nav-number">3.</span> <span class="nav-text">Git的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置及创建"><span class="nav-number">3.</span> <span class="nav-text">配置及创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">3.2.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时光穿梭"><span class="nav-number">4.</span> <span class="nav-text">时光穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">4.1.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销修改"><span class="nav-number">4.2.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件删除"><span class="nav-number">4.3.</span> <span class="nav-text">文件删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库"><span class="nav-number">5.</span> <span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">6.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建合并分支"><span class="nav-number">6.1.</span> <span class="nav-text">创建合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支冲突解决"><span class="nav-number">6.2.</span> <span class="nav-text">分支冲突解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理策略"><span class="nav-number">6.3.</span> <span class="nav-text">分支管理策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bug分支"><span class="nav-number">6.4.</span> <span class="nav-text">Bug分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rebase"><span class="nav-number">6.5.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签管理"><span class="nav-number">7.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">7.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
