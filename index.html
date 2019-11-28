@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-28 14:40:00 / 修改时间：07:20:50" itemprop="dateCreated datePublished" datetime="2019-11-28T14:40:00Z">2019-11-28</time>
+              <time title="创建时间：2019-11-28 14:40:00 / 修改时间：11:55:31" itemprop="dateCreated datePublished" datetime="2019-11-28T14:40:00Z">2019-11-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>365</span>
+              <span>384</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -257,21 +257,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><pre><code>git checkout master
-git pull
-git checkout test
-git rebase -i HEAD~2  //合并提交 --- 2表示合并两个
-git rebase master----&gt;git status---&gt;解决冲突---&gt;git add .---&gt;git rebase --continue
-git checkout master
-git merge test
-git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h2><p><img src="/images/2019-11-28_150759.png" alt="图片"><br><img src="/images/2019-11-28_150939.png" alt="图片"><br><img src="/images/2019-11-28_151031.png" alt="图片"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p>git在工作中正确的使用方式—-git rebase篇：<br><a href="https://blog.csdn.net/nrsc272420199/article/details/85555911" target="_blank" rel="noopener">https://blog.csdn.net/nrsc272420199/article/details/85555911</a>    </p>
-</li>
-<li><p>git(十六) git rebase 实战：<br><a href="https://blog.csdn.net/wzq6578702/article/details/76736008" target="_blank" rel="noopener">https://blog.csdn.net/wzq6578702/article/details/76736008</a>  </p>
-</li>
-</ul>
-
+          <p>本文记录git rebase的使用方法。</p>
+<p><img src="/images/post-background1.jpg" alt="图片"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/51499.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -321,7 +316,7 @@ git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="header
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-28 02:31:27" itemprop="dateModified" datetime="2019-11-28T02:31:27Z">2019-11-28</time>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,7 +343,7 @@ git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="header
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>512</span>
+              <span>527</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -367,42 +362,15 @@ git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="header
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="fast-forward"><a href="#fast-forward" class="headerlink" title="fast-forward"></a>fast-forward</h2><pre><code>git checkout master
-git merge test</code></pre><p><img src="/images/git001.gif" alt="图片"></p>
-<h3 id="合并前"><a href="#合并前" class="headerlink" title="合并前"></a>合并前</h3><p><img src="/images/2019-11-27_170740.png" alt="图片"></p>
-<h3 id="合并后"><a href="#合并后" class="headerlink" title="合并后"></a>合并后</h3><p><img src="/images/2019-11-27_170832.png" alt="图片"></p>
-<h2 id="no-ff"><a href="#no-ff" class="headerlink" title="no-ff"></a>no-ff</h2><pre><code>git checkout master
-git merge --no-ff test</code></pre><p><img src="/images/git002.gif" alt="图片"></p>
-<h3 id="合并前-1"><a href="#合并前-1" class="headerlink" title="合并前"></a>合并前</h3><p><img src="/images/2019-11-27_171419.png" alt="图片"></p>
-<h3 id="合并后-1"><a href="#合并后-1" class="headerlink" title="合并后"></a>合并后</h3><p><img src="/images/2019-11-27_171626.png" alt="图片"></p>
-<h2 id="squash"><a href="#squash" class="headerlink" title="squash"></a>squash</h2><pre><code>git checkout master
-git merge --squash test
-git commit -m &quot;add B1 B2&quot;</code></pre><p><img src="/images/git003.gif" alt="图片"></p>
-<h3 id="合并前-2"><a href="#合并前-2" class="headerlink" title="合并前"></a>合并前</h3><p><img src="/images/2019-11-27_181633.png" alt="图片"></p>
-<h3 id="合并后-2"><a href="#合并后-2" class="headerlink" title="合并后"></a>合并后</h3><p><img src="/images/2019-11-27_181730.png" alt="图片"></p>
-<h2 id="分叉合并时merge和rebase区别"><a href="#分叉合并时merge和rebase区别" class="headerlink" title="分叉合并时merge和rebase区别"></a>分叉合并时merge和rebase区别</h2><h3 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h3><pre><code>git checkout test
-git merge master</code></pre><p><img src="/images/2019-11-27_183326.png" alt="图片"></p>
-<p><img src="/images/2019-11-27_183423.png" alt="图片"></p>
-<h4 id="合并前-3"><a href="#合并前-3" class="headerlink" title="合并前"></a>合并前</h4><p><img src="/images/2019-11-27_184239.png" alt="图片"></p>
-<h4 id="合并后-3"><a href="#合并后-3" class="headerlink" title="合并后"></a>合并后</h4><p><img src="/images/2019-11-27_184416.png" alt="图片"></p>
-<h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h3><pre><code>git checkout test
-git rebase master</code></pre><p><img src="/images/2019-11-27_185410.png" alt="图片"></p>
-<p><img src="/images/2019-11-27_185454.png" alt="图片"></p>
-<h4 id="合并前-4"><a href="#合并前-4" class="headerlink" title="合并前"></a>合并前</h4><p><img src="/images/2019-11-27_185535.png" alt="图片"></p>
-<h4 id="合并后-4"><a href="#合并后-4" class="headerlink" title="合并后"></a>合并后</h4><p><img src="/images/2019-11-27_185649.png" alt="图片"></p>
-<h2 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h2><ul>
-<li>用于单个提交合并，通常是引用别人开发分支上的提交</li>
-</ul>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>绝不要在公共的分支上使用rebase。在你运行git rebase 之前，一定要问问你自己“有没有别人正在这个分支上工作？”</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p>图解4种git合并分支方法：<br><a href="https://div.io/topic/2030" target="_blank" rel="noopener">https://div.io/topic/2030</a>    </p>
-</li>
-<li><p>Git分支合并选择：<br><a href="https://www.cnblogs.com/MuYunyun/p/6876413.html?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://www.cnblogs.com/MuYunyun/p/6876413.html?utm_source=itdadao&amp;utm_medium=referral</a>  </p>
-</li>
-</ul>
-
+          <p>本文总结了Git分支合并方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/57502.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -444,10 +412,16 @@ git rebase master</code></pre><p><img src="/images/2019-11-27_185410.png" alt="�
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-26 14:00:04 / 修改时间：06:16:40" itemprop="dateCreated datePublished" datetime="2019-11-26T14:00:04Z">2019-11-26</time>
+              <time title="创建时间：2019-11-26 14:00:04" itemprop="dateCreated datePublished" datetime="2019-11-26T14:00:04Z">2019-11-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -473,7 +447,7 @@ git rebase master</code></pre><p><img src="/images/2019-11-27_185410.png" alt="�
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>188</span>
+              <span>203</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -492,22 +466,15 @@ git rebase master</code></pre><p><img src="/images/2019-11-27_185410.png" alt="�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="方法的声明"><a href="#方法的声明" class="headerlink" title="方法的声明"></a>方法的声明</h2><p><img src="/images/011_07_01.png" alt="图片"></p>
-<h2 id="方法的调用"><a href="#方法的调用" class="headerlink" title="方法的调用"></a>方法的调用</h2><pre><code>Demo d = new Demo();
-Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><ul>
-<li>方法名相同，参数列表个数不同</li>
-<li>方法名相同，参数列表类型不同</li>
-</ul>
-<h2 id="可变参数列表"><a href="#可变参数列表" class="headerlink" title="可变参数列表"></a>可变参数列表</h2><ul>
-<li>可变参数一定是方法中的最后一个参数</li>
-<li>数组可以传递给可变参数的方法，反之不行</li>
-<li>在重载中，含有可变参数的方法是最后被选中的</li>
-</ul>
-<h2 id="方法的传值问题"><a href="#方法的传值问题" class="headerlink" title="方法的传值问题"></a>方法的传值问题</h2><ul>
-<li>基本数据类型传值<br> 通过值拷贝进行传值</li>
-<li>引用数据类型传值<br> 方法中对数组的改变，会影响主方法中传来的数组</li>
-</ul>
-
+          <p>本文是Java方法的学习总结。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/16735.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -549,10 +516,16 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-25 15:21:29 / 修改时间：07:28:26" itemprop="dateCreated datePublished" datetime="2019-11-25T15:21:29Z">2019-11-25</time>
+              <time title="创建时间：2019-11-25 15:21:29" itemprop="dateCreated datePublished" datetime="2019-11-25T15:21:29Z">2019-11-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -578,7 +551,7 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>93</span>
+              <span>108</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -597,16 +570,15 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><ul>
-<li>声明</li>
-<li>创建</li>
-<li>初始化</li>
-<li>元素的引用</li>
-<li>长度</li>
-<li>数组的应用</li>
-</ul>
-<h2 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h2><p>1、数组是引用数据类型<br>2、数组有两种声明方式<br>3、创建数组时，会开辟连续的内存空间<br>4、数组有默认值<br>5、数组长度使用length属性获取</p>
-
+          <p>本文是Java数组的学习总结。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/53646.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -648,10 +620,16 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-24 20:37:22 / 修改时间：12:56:58" itemprop="dateCreated datePublished" datetime="2019-11-24T20:37:22Z">2019-11-24</time>
+              <time title="创建时间：2019-11-24 20:37:22" itemprop="dateCreated datePublished" datetime="2019-11-24T20:37:22Z">2019-11-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -677,7 +655,7 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>302</span>
+              <span>319</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -696,66 +674,15 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h2><p>流程控制语句包括：顺序、选择、循环</p>
-<h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><ul>
-<li>if语句</li>
-<li>if-else语句</li>
-<li>多重if-else语句</li>
-<li>嵌套if-else语句</li>
-<li>switch语句（switch判断表达式中的结果可以为整形和字符串）</li>
-</ul>
-<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ul>
-<li>while循环</li>
-<li>do-while循环</li>
-<li>for循环</li>
-<li>嵌套循环</li>
-<li>break语句和continue语句</li>
-</ul>
-<h2 id="IntelliJ断点调试的快捷键"><a href="#IntelliJ断点调试的快捷键" class="headerlink" title="IntelliJ断点调试的快捷键"></a>IntelliJ断点调试的快捷键</h2><table>
-<thead>
-<tr>
-<th align="center">快捷键</th>
-<th align="left">功能描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">F8</td>
-<td align="left">单步调试,不进入函数内部</td>
-</tr>
-<tr>
-<td align="center">F7</td>
-<td align="left">单步调试，进入函数内部</td>
-</tr>
-<tr>
-<td align="center">Shift+F7</td>
-<td align="left">选择要进入的函数</td>
-</tr>
-<tr>
-<td align="center">Shift+F8</td>
-<td align="left">跳出函数</td>
-</tr>
-<tr>
-<td align="center">Alt+F9</td>
-<td align="left">运行到断点</td>
-</tr>
-<tr>
-<td align="center">Alt+F8</td>
-<td align="left">执行表达式查看结果</td>
-</tr>
-<tr>
-<td align="center">F9</td>
-<td align="left">继续执行，进入下一个断点或执行完程序</td>
-</tr>
-<tr>
-<td align="center">Ctrl+F8</td>
-<td align="left">设置/取消当前行断点</td>
-</tr>
-<tr>
-<td align="center">Ctrl+Shift+F8</td>
-<td align="left">查看断点</td>
-</tr>
-</tbody></table>
-
+          <p>本文是Java流程控制的学习总结。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/13069.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -805,7 +732,7 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 05:52:04" itemprop="dateModified" datetime="2019-11-20T05:52:04Z">2019-11-20</time>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -832,7 +759,7 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>586</span>
+              <span>602</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -851,29 +778,15 @@ Demo.show();</code></pre><h2 id="方法的重载"><a href="#方法的重载" cla
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>表达式由运算符和操作数组成</p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p><img src="/images/011_03_01.png" alt="图片"></p>
-<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>算术运算和字符串连接区别：</p>
-<pre><code>int num1 = 10;
-int num2 = 5;
-int result;
-result = num1 + num2;
-
-System.out.println(num1 + num2);    #算术运算
-System.out.println(&quot;&quot; + num1 + num2);   #字符串连接</code></pre><p>分子分母都是整型时，结果为整除后的结果：</p>
-<pre><code>System.out.println(13 / 5);   #2
-System.out.println(13.0 / 5);   #2.6</code></pre><h3 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h3><p>x++和++x的区别：</p>
-<pre><code>int x = 4;  
-int y = (x++)+5;
-System.out.println(&quot;x = &quot; + x + &quot;,y = &quot; + y);   #x = 5;y = 9
-
-int x = 4;  
-int y = (++x)+5;
-System.out.println(&quot;x = &quot; + x + &quot;,y = &quot; + y);   #x = 5;y = 10</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>&amp;&amp;和||为短路运算符，如果第一个表达式的值能够决定表达式最后的结果，剩下的表达式不再计算：</p>
-<pre><code>int n = 3;
-boolean b = (3 &lt; 7) || ((n++) &lt; 2)  #b = true;n = 3;</code></pre><h2 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h2><p><img src="/images/011_03_02.png" alt="图片"></p>
-<h2 id="单目，双目，三目运算符"><a href="#单目，双目，三目运算符" class="headerlink" title="单目，双目，三目运算符"></a>单目，双目，三目运算符</h2><p>区别：操作数的个数<br>单目：++，–<br>双目：+，-<br>三目：?:</p>
-
+          <p>本文是Java运算符的学习总结。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/46231.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -923,7 +836,7 @@ boolean b = (3 &lt; 7) || ((n++) &lt; 2)  #b = true;n = 3;</code></pre><h2 id="�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 05:52:04" itemprop="dateModified" datetime="2019-11-20T05:52:04Z">2019-11-20</time>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -950,7 +863,7 @@ boolean b = (3 &lt; 7) || ((n++) &lt; 2)  #b = true;n = 3;</code></pre><h2 id="�
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>532</span>
+              <span>550</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -969,28 +882,15 @@ boolean b = (3 &lt; 7) || ((n++) &lt; 2)  #b = true;n = 3;</code></pre><h2 id="�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>标识符的命名规则：</p>
-<p><img src="/images/011_02_01.png" alt="图片"></p>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p><img src="/images/011_02_02.png" alt="图片"></p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量的三个元素： 变量类型、变量名和变量值</p>
-<h3 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h3><p><img src="/images/011_02_03.png" alt="图片"></p>
-<p><img src="/images/011_02_04.png" alt="图片"></p>
-<h3 id="数据类型（变量类型）"><a href="#数据类型（变量类型）" class="headerlink" title="数据类型（变量类型）"></a>数据类型（变量类型）</h3><p><img src="/images/011_02_05.png" alt="图片"></p>
-<h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p><img src="/images/011_02_06.png" alt="图片"></p>
-<h3 id="整型、浮点和字符型字面量"><a href="#整型、浮点和字符型字面量" class="headerlink" title="整型、浮点和字符型字面量"></a>整型、浮点和字符型字面量</h3><p>八进制：以0开头 #023<br>十六进制：以0x或0X开头  #0x23,0X23<br>注意long, float, double数据的表示<br>double类型数据表示最大<br>char有ASCII和Unicode两种编码方式：</p>
-<pre><code>char a = &apos;a&apos;;
-char a = &apos;\005d&apos;;</code></pre><h2 id="变量的存储类型"><a href="#变量的存储类型" class="headerlink" title="变量的存储类型"></a>变量的存储类型</h2><ol>
-<li>寄存器：最快的存储区, 由编译器根据需求进行分配,我们在程序中无法控制</li>
-<li>栈(stack)：存放基本类型的变量数据和对象的引用，但对象本身不存放在栈中，而是存放在堆（new 出来的对象）或者常量池中（字符串常量对象存放在常量池中）</li>
-<li>堆(heap)：存放所有new出来的对象。</li>
-<li>静态域：存放静态成员（static定义的）</li>
-<li>常量池：存放字符串常量和基本类型常量（public static final）</li>
-<li>非RAM存储：硬盘等永久存储空间</li>
-</ol>
-<h2 id="变量的类型转换"><a href="#变量的类型转换" class="headerlink" title="变量的类型转换"></a>变量的类型转换</h2><p>类型转换包括隐式类型转换和强制类型转换</p>
-<p><img src="/images/011_02_07.png" alt="图片"></p>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>final声明<br>变量名需要全部大写</p>
-<h2 id="FieldModifier顺序"><a href="#FieldModifier顺序" class="headerlink" title="FieldModifier顺序"></a>FieldModifier顺序</h2><pre><code>public protected private static final transient volatile</code></pre>
+          <p>本文是Java变量与常量的学习总结。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/22399.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1040,7 +940,7 @@ char a = &apos;\005d&apos;;</code></pre><h2 id="变量的存储类型"><a href="
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-28 02:29:31" itemprop="dateModified" datetime="2019-11-28T02:29:31Z">2019-11-28</time>
+                <time title="修改时间：2019-11-28 11:29:59" itemprop="dateModified" datetime="2019-11-28T11:29:59Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1086,67 +986,15 @@ char a = &apos;\005d&apos;;</code></pre><h2 id="变量的存储类型"><a href="
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总结git的常用命令</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装地址：<a href="http://git-scm.com" target="_blank" rel="noopener">http://git-scm.com</a></p>
-<h2 id="配置及创建"><a href="#配置及创建" class="headerlink" title="配置及创建"></a>配置及创建</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><pre><code>git config --global user.name &quot;Jesse&quot; #Git配置
-git config --global user.email &quot;kongjinxing0@gmail.com&quot;
-git config --global color-ui true
-git config --global alias.it init 
-&lt;https://github.com/markgandolfo/git-bash-completion&gt; #补全
-echo  source ~/git-completion.bash &gt;&gt; ~/.bashrc
---global: 修改当前用户的全局配置文件 ~/.gitconfig
---system: 修改所有用户的全局配置文件 /etc/gitconfig
-无参数：   修改本地仓库的配置文件    .git/config</code></pre><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><pre><code>git init                #创建仓库
-git add file           #提交文件到暂存区
-git commit -m &lt;message&gt; #提交所有文件到版本库</code></pre><h2 id="时光穿梭"><a href="#时光穿梭" class="headerlink" title="时光穿梭"></a>时光穿梭</h2><pre><code>git status              #查看状态
-git show SHA            #查看某个提交信息
-git diff file           #查看提交差异    </code></pre><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><pre><code>git log --pretty=oneline #单行显示
-git log -p              #显示每次提交具体的修改
-gitk                    #图形化显示提交历史
-git reset SHA           #回退版本到工作目录
-git reset --soft SHA    #回退版本到暂存区
-git reset --hard SHA    #回退版本，修改丢弃
-git reflog              #显示每次操作命令</code></pre><h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><pre><code>git checkout file         #撤销工作区修改
-git restore --staged file #撤销暂存区到工作区   
-git commit --amend        #修改最后一次提交   </code></pre><h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><pre><code>git rm file             #从工作目录和暂存区中删除文件</code></pre><h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><pre><code>git clone url          #从远程仓库克隆
-git remote add  主机名 仓库地址 #添加远程仓库地址
-git remote -v           #查看远程仓库信息    
-git remote rm 主机名    #删除远程仓库
-git remote rename &lt;old&gt; &lt;new&gt; #远程仓库重命名
-git fetch&lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt; #拉取远程更新到本地仓库
-git pull &lt;远程主机&gt; &lt;远程分支&gt;:&lt;本地分支&gt; #拉取远程跟新并合并到本地仓库
-git push &lt;远程主机&gt; &lt;本地分支&gt;:&lt;远程分支&gt; #推送本地修改到远程仓库
-git remote show origin #查看远程分支和本地分支的对应关系
-git branch b1 origin/b1 #跟踪远程分支
-git push orgin :b1      #删除远程分支</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建合并分支"><a href="#创建合并分支" class="headerlink" title="创建合并分支"></a>创建合并分支</h3><pre><code>git branch              #查看分支
-git branch &lt;name&gt;       #创建分支
-git switch              #切换分支
-git switch -c &lt;name&gt;    #创建+切换分支
-git merge  dev          #分支合并Fast-forward 
-git merge --no-ff -m &lt;message&gt; dev #合并分支no-ff 
-git merge --squash dev  #压合合并squash 
-git cherry-pick SHA     #合并单个提交         
-git branch -d           #删除分支
-git branch -D           #强制删除没有合并的分支    </code></pre><h3 id="分支冲突解决"><a href="#分支冲突解决" class="headerlink" title="分支冲突解决"></a>分支冲突解决</h3><pre><code>git mergetool           #分支冲突解决工具
-git log --graph         #查看分支合并图</code></pre><h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><p><img src="/images/2019-11-26_220410.png" alt="图片"></p>
-<h3 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h3><pre><code>git stash               #分支修改隐藏
-git stach pop           #恢复分支</code></pre><h3 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h3><pre><code>git swtich dev
-git rebase master       #分支衍合
-git fetch 
-git rebase origin/master #拉取远程分支衍合</code></pre><h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><pre><code>git tag v1.0            #添加本地标签
-git tag                 #查看本地标签
-git tag -d v1.0         #删除本地标签
-git push origin v1.0    #推送某个标签
-git push origin --tags  #推送所有标签
-git push origin  :refs/tags/v1.0 #删除远程标签</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p>廖雪峰的官方网站：<br><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000</a></p>
-</li>
-<li><p>Git零基础实战教程：<br><a href="https://edu.51cto.com/course/5939.html" target="_blank" rel="noopener">https://edu.51cto.com/course/5939.html</a>  </p>
-</li>
-<li><p>CodeSheep的Git操作与命令:<br><a href="https://mp.weixin.qq.com/s/swnwBiuyVmhs5iPqv3H6BQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/swnwBiuyVmhs5iPqv3H6BQ</a></p>
-</li>
-</ul>
-
+          <p>本文总结了Git常用命令。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/7065.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1196,7 +1044,7 @@ git push origin  :refs/tags/v1.0 #删除远程标签</code></pre><h2 id="参考"
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 05:52:04" itemprop="dateModified" datetime="2019-11-20T05:52:04Z">2019-11-20</time>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1223,7 +1071,7 @@ git push origin  :refs/tags/v1.0 #删除远程标签</code></pre><h2 id="参考"
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>155</span>
+              <span>196</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1242,10 +1090,15 @@ git push origin  :refs/tags/v1.0 #删除远程标签</code></pre><h2 id="参考"
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>打开站点配置文件_config.yml，修改</p>
-<pre><code># URL
-## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
-url: http:/***.github.io    </code></pre>
+          <p>本文解决AddThis插件显示<a href="http://yoursite.com" target="_blank" rel="noopener">http://yoursite.com</a>问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/44179.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1295,7 +1148,7 @@ url: http:/***.github.io    </code></pre>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 05:52:04" itemprop="dateModified" datetime="2019-11-20T05:52:04Z">2019-11-20</time>
+                <time title="修改时间：2019-11-28 11:30:41" itemprop="dateModified" datetime="2019-11-28T11:30:41Z">2019-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1322,7 +1175,7 @@ url: http:/***.github.io    </code></pre>
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>560</span>
+              <span>591</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1341,11 +1194,15 @@ url: http:/***.github.io    </code></pre>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>打开\themes\next\layout_third-party\statistics\busuanzi-counter.swig,将</p>
-<pre><code>&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_uv&quot; style=&quot;display: none;&quot;&gt;
-&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_pv&quot; style=&quot;display: none;&quot;&gt;</code></pre><p>修改  </p>
-<pre><code>&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_uv&quot; style=&quot;display: none;&quot;&gt;&lt;/span&gt; 
-&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_pv&quot; style=&quot;display: none;&quot;&gt;&lt;/span&gt;    </code></pre>
+          <p>本文解决live2d和busuanzi插件不兼容问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/58679.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
