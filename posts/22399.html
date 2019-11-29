@@ -66,7 +66,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;011_02_05.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;011_02_06.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;011_02_07.png">
-<meta property="og:updated_time" content="2019-11-29T08:12:35.196Z">
+<meta property="og:updated_time" content="2019-11-29T12:30:07.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;011_02_01.png">
 
@@ -228,7 +228,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 08:12:35" itemprop="dateModified" datetime="2019-11-29T08:12:35Z">2019-11-29</time>
+                <time title="修改时间：2019-11-29 12:30:07" itemprop="dateModified" datetime="2019-11-29T12:30:07Z">2019-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>544</span>
+              <span>565</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -276,21 +276,21 @@
       
         <p>🌟本文是Java变量与常量的学习总结🌟</p>
 <a id="more"></a>
-<h2 id="标识符"><a class="header-anchor" href="#标识符">¶</a>标识符</h2>
+<h2 id="1-标识符"><a class="header-anchor" href="#1-标识符">¶</a>1 标识符</h2>
 <p>标识符的命名规则：</p>
 <p><img src="/images/011_02_01.png" alt="图片"></p>
-<h2 id="关键字"><a class="header-anchor" href="#关键字">¶</a>关键字</h2>
+<h2 id="2-关键字"><a class="header-anchor" href="#2-关键字">¶</a>2 关键字</h2>
 <p><img src="/images/011_02_02.png" alt="图片"></p>
-<h2 id="变量"><a class="header-anchor" href="#变量">¶</a>变量</h2>
+<h2 id="3-变量"><a class="header-anchor" href="#3-变量">¶</a>3 变量</h2>
 <p>变量的三个元素： 变量类型、变量名和变量值</p>
-<h3 id="变量名"><a class="header-anchor" href="#变量名">¶</a>变量名</h3>
+<h3 id="3-1-变量名"><a class="header-anchor" href="#3-1-变量名">¶</a>3.1 变量名</h3>
 <p><img src="/images/011_02_03.png" alt="图片"></p>
 <p><img src="/images/011_02_04.png" alt="图片"></p>
-<h3 id="数据类型-变量类型"><a class="header-anchor" href="#数据类型-变量类型">¶</a>数据类型（变量类型）</h3>
+<h3 id="3-2-数据类型-变量类型"><a class="header-anchor" href="#3-2-数据类型-变量类型">¶</a>3.2 数据类型（变量类型）</h3>
 <p><img src="/images/011_02_05.png" alt="图片"></p>
-<h4 id="基本数据类型"><a class="header-anchor" href="#基本数据类型">¶</a>基本数据类型</h4>
+<h4 id="3-2-1-基本数据类型"><a class="header-anchor" href="#3-2-1-基本数据类型">¶</a>3.2.1 基本数据类型</h4>
 <p><img src="/images/011_02_06.png" alt="图片"></p>
-<h3 id="整型-浮点和字符型字面量"><a class="header-anchor" href="#整型-浮点和字符型字面量">¶</a>整型、浮点和字符型字面量</h3>
+<h3 id="3-3-整型-浮点和字符型字面量"><a class="header-anchor" href="#3-3-整型-浮点和字符型字面量">¶</a>3.3 整型、浮点和字符型字面量</h3>
 <p>八进制：以0开头 #023<br>
 十六进制：以0x或0X开头  #0x23,0X23<br>
 注意long, float, double数据的表示<br>
@@ -299,7 +299,7 @@ char有ASCII和Unicode两种编码方式：</p>
 <pre><code>char a = 'a';
 char a = '\005d';
 </code></pre>
-<h2 id="变量的存储类型"><a class="header-anchor" href="#变量的存储类型">¶</a>变量的存储类型</h2>
+<h2 id="4-变量的存储类型"><a class="header-anchor" href="#4-变量的存储类型">¶</a>4 变量的存储类型</h2>
 <ol>
 <li>寄存器：最快的存储区, 由编译器根据需求进行分配,我们在程序中无法控制</li>
 <li>栈(stack)：存放基本类型的变量数据和对象的引用，但对象本身不存放在栈中，而是存放在堆（new 出来的对象）或者常量池中（字符串常量对象存放在常量池中）</li>
@@ -308,13 +308,13 @@ char a = '\005d';
 <li>常量池：存放字符串常量和基本类型常量（public static final）</li>
 <li>非RAM存储：硬盘等永久存储空间</li>
 </ol>
-<h2 id="变量的类型转换"><a class="header-anchor" href="#变量的类型转换">¶</a>变量的类型转换</h2>
+<h2 id="5-变量的类型转换"><a class="header-anchor" href="#5-变量的类型转换">¶</a>5 变量的类型转换</h2>
 <p>类型转换包括隐式类型转换和强制类型转换</p>
 <p><img src="/images/011_02_07.png" alt="图片"></p>
-<h2 id="常量"><a class="header-anchor" href="#常量">¶</a>常量</h2>
+<h2 id="6-常量"><a class="header-anchor" href="#6-常量">¶</a>6 常量</h2>
 <p>final声明<br>
 变量名需要全部大写</p>
-<h2 id="fieldmodifier顺序"><a class="header-anchor" href="#fieldmodifier顺序">¶</a>FieldModifier顺序</h2>
+<h2 id="7-fieldmodifier顺序"><a class="header-anchor" href="#7-fieldmodifier顺序">¶</a>7 FieldModifier顺序</h2>
 <pre><code>public protected private static final transient volatile</code></pre>
 
     </div>
@@ -403,7 +403,7 @@ char a = '\005d';
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标识符"><span class="nav-number">1.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量名"><span class="nav-number">3.1.</span> <span class="nav-text">变量名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型-变量类型"><span class="nav-number">3.2.</span> <span class="nav-text">数据类型（变量类型）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">3.2.1.</span> <span class="nav-text">基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整型-浮点和字符型字面量"><span class="nav-number">3.3.</span> <span class="nav-text">整型、浮点和字符型字面量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的存储类型"><span class="nav-number">4.</span> <span class="nav-text">变量的存储类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的类型转换"><span class="nav-number">5.</span> <span class="nav-text">变量的类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">6.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fieldmodifier顺序"><span class="nav-number">7.</span> <span class="nav-text">FieldModifier顺序</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标识符"><span class="nav-text">1 标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-关键字"><span class="nav-text">2 关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-变量"><span class="nav-text">3 变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-变量名"><span class="nav-text">3.1 变量名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-数据类型-变量类型"><span class="nav-text">3.2 数据类型（变量类型）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-基本数据类型"><span class="nav-text">3.2.1 基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-整型-浮点和字符型字面量"><span class="nav-text">3.3 整型、浮点和字符型字面量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-变量的存储类型"><span class="nav-text">4 变量的存储类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-变量的类型转换"><span class="nav-text">5 变量的类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-常量"><span class="nav-text">6 常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-fieldmodifier顺序"><span class="nav-text">7 FieldModifier顺序</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

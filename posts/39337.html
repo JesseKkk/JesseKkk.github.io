@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="Star">
 <meta property="og:description" content="🌟本文记录如何从零搭建一个个人博客🌟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-29T08:12:35.196Z">
+<meta property="og:updated_time" content="2019-11-29T12:28:04.749Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jessekkk.github.io/posts/39337.html">
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 08:12:35" itemprop="dateModified" datetime="2019-11-29T08:12:35Z">2019-11-29</time>
+                <time title="修改时间：2019-11-29 12:28:04" itemprop="dateModified" datetime="2019-11-29T12:28:04Z">2019-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
       
         <p>🌟本文记录如何从零搭建一个个人博客🌟</p>
 <a id="more"></a>
-<h2 id="搭建环境"><a class="header-anchor" href="#搭建环境">¶</a>搭建环境</h2>
+<h2 id="1-搭建环境"><a class="header-anchor" href="#1-搭建环境">¶</a>1 搭建环境</h2>
 <ul>
 <li>window 10 x64</li>
 <li>git v2.23.0</li>
@@ -276,7 +276,7 @@
 <li>hexo v3.1.0</li>
 <li>next v7.5.0</li>
 </ul>
-<h2 id="搭建步骤"><a class="header-anchor" href="#搭建步骤">¶</a>搭建步骤</h2>
+<h2 id="2-搭建步骤"><a class="header-anchor" href="#2-搭建步骤">¶</a>2 搭建步骤</h2>
 <ul>
 <li>1.安装Git</li>
 <li>2.创建GitHub仓库</li>
@@ -286,12 +286,12 @@
 <li>6.将Hexo部署到GitHub</li>
 <li>7.发布文章</li>
 </ul>
-<h3 id="安装git"><a class="header-anchor" href="#安装git">¶</a>安装Git</h3>
+<h3 id="2-1-安装git"><a class="header-anchor" href="#2-1-安装git">¶</a>2.1 安装Git</h3>
 <p>下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
-<h3 id="创建github仓库"><a class="header-anchor" href="#创建github仓库">¶</a>创建GitHub仓库</h3>
+<h3 id="2-2-创建github仓库"><a class="header-anchor" href="#2-2-创建github仓库">¶</a>2.2 创建GitHub仓库</h3>
 <p>注册GitHub账号 <a href="https://github.com" target="_blank" rel="noopener">https://github.com</a><br>
 创建仓库，仓库名必须命名为：***.github.io</p>
-<h3 id="git与github账号绑定"><a class="header-anchor" href="#git与github账号绑定">¶</a>Git与GitHub账号绑定</h3>
+<h3 id="2-3-git与github账号绑定"><a class="header-anchor" href="#2-3-git与github账号绑定">¶</a>2.3 Git与GitHub账号绑定</h3>
 <p>命令均在Git Bash下操作</p>
 <pre><code>git config --global user.name &quot;user.name&quot;
 git config --global user.email &quot;user.email&quot;
@@ -299,9 +299,9 @@ ssh-keygen -t rsa -C &quot;user.email&quot;
 cat ~/.ssh/id_rsa.pub  #复制内容到GitHub下的SSH keys
 ssh –T git@GitHub.com   #验证绑定是否成功
 </code></pre>
-<h3 id="安装node-js"><a class="header-anchor" href="#安装node-js">¶</a>安装Node.js</h3>
+<h3 id="2-4-安装node-js"><a class="header-anchor" href="#2-4-安装node-js">¶</a>2.4 安装Node.js</h3>
 <p>下载并安装 <a href="https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi" target="_blank" rel="noopener">https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi</a></p>
-<h3 id="安装hexo"><a class="header-anchor" href="#安装hexo">¶</a>安装Hexo</h3>
+<h3 id="2-5-安装hexo"><a class="header-anchor" href="#2-5-安装hexo">¶</a>2.5 安装Hexo</h3>
 <pre><code>npm config set registry https://registry.npm.taobao.org
 npm install -g hexo-cli
 hexo init MyBlog
@@ -310,7 +310,7 @@ npm install
 hexo g
 hexo s  #浏览器打开http://localhost:4000/，就可以看到博客
 </code></pre>
-<h3 id="将hexo部署到github"><a class="header-anchor" href="#将hexo部署到github">¶</a>将Hexo部署到GitHub</h3>
+<h3 id="2-6-将hexo部署到github"><a class="header-anchor" href="#2-6-将hexo部署到github">¶</a>2.6 将Hexo部署到GitHub</h3>
 <p>打开站点配置文件_config.yml，修改</p>
 <pre><code>deploy:
  type: git
@@ -323,13 +323,13 @@ hexo clean
 hexo g
 hexo d  #浏览器打开http://***.github.io，就可以看到博客
 </code></pre>
-<h3 id="发布文章"><a class="header-anchor" href="#发布文章">¶</a>发布文章</h3>
+<h3 id="2-7-发布文章"><a class="header-anchor" href="#2-7-发布文章">¶</a>2.7 发布文章</h3>
 <pre><code>hexo n &quot;文章名&quot; #新建文章，路径在MyBlog/source/_posts/***.md
 hexo clean
 hexo g
 hexo d
 </code></pre>
-<h2 id="更换next主题"><a class="header-anchor" href="#更换next主题">¶</a>更换Next主题</h2>
+<h2 id="3-更换next主题"><a class="header-anchor" href="#3-更换next主题">¶</a>3 更换Next主题</h2>
 <pre><code>cd MyBlog
 git clone https://github.com/iissnan/hexo-theme-next themes/next
 </code></pre>
@@ -438,7 +438,7 @@ url:                #解析地址
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建环境"><span class="nav-number">1.</span> <span class="nav-text">搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">2.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建github仓库"><span class="nav-number">2.2.</span> <span class="nav-text">创建GitHub仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git与github账号绑定"><span class="nav-number">2.3.</span> <span class="nav-text">Git与GitHub账号绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.4.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.5.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将hexo部署到github"><span class="nav-number">2.6.</span> <span class="nav-text">将Hexo部署到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布文章"><span class="nav-number">2.7.</span> <span class="nav-text">发布文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换next主题"><span class="nav-number">3.</span> <span class="nav-text">更换Next主题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-搭建环境"><span class="nav-text">1 搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-搭建步骤"><span class="nav-text">2 搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装git"><span class="nav-text">2.1 安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建github仓库"><span class="nav-text">2.2 创建GitHub仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-git与github账号绑定"><span class="nav-text">2.3 Git与GitHub账号绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-安装node-js"><span class="nav-text">2.4 安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-安装hexo"><span class="nav-text">2.5 安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-将hexo部署到github"><span class="nav-text">2.6 将Hexo部署到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-发布文章"><span class="nav-text">2.7 发布文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-更换next主题"><span class="nav-text">3 更换Next主题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -75,7 +75,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185454.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185535.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185649.png">
-<meta property="og:updated_time" content="2019-11-29T08:12:35.196Z">
+<meta property="og:updated_time" content="2019-11-29T12:28:11.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;git001.gif">
 
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 08:12:35" itemprop="dateModified" datetime="2019-11-29T08:12:35Z">2019-11-29</time>
+                <time title="修改时间：2019-11-29 12:28:11" itemprop="dateModified" datetime="2019-11-29T12:28:11Z">2019-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>549</span>
+              <span>600</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -285,64 +285,64 @@
       
         <p>🌟本文总结了Git分支合并方法🌟</p>
 <a id="more"></a>
-<h2 id="fast-forward"><a class="header-anchor" href="#fast-forward">¶</a>fast-forward</h2>
+<h2 id="1-fast-forward"><a class="header-anchor" href="#1-fast-forward">¶</a>1 fast-forward</h2>
 <pre><code>git checkout master
 git merge test
 </code></pre>
 <p><img src="/images/git001.gif" alt="图片"></p>
-<h3 id="合并前"><a class="header-anchor" href="#合并前">¶</a>合并前</h3>
+<h3 id="1-1-合并前"><a class="header-anchor" href="#1-1-合并前">¶</a>1.1 合并前</h3>
 <p><img src="/images/2019-11-27_170740.png" alt="图片"></p>
-<h3 id="合并后"><a class="header-anchor" href="#合并后">¶</a>合并后</h3>
+<h3 id="1-2-合并后"><a class="header-anchor" href="#1-2-合并后">¶</a>1.2 合并后</h3>
 <p><img src="/images/2019-11-27_170832.png" alt="图片"></p>
-<h2 id="no-ff"><a class="header-anchor" href="#no-ff">¶</a>no-ff</h2>
+<h2 id="2-no-ff"><a class="header-anchor" href="#2-no-ff">¶</a>2 no-ff</h2>
 <pre><code>git checkout master
 git merge --no-ff test
 </code></pre>
 <p><img src="/images/git002.gif" alt="图片"></p>
-<h3 id="合并前-v2"><a class="header-anchor" href="#合并前-v2">¶</a>合并前</h3>
+<h3 id="2-1-合并前"><a class="header-anchor" href="#2-1-合并前">¶</a>2.1 合并前</h3>
 <p><img src="/images/2019-11-27_171419.png" alt="图片"></p>
-<h3 id="合并后-v2"><a class="header-anchor" href="#合并后-v2">¶</a>合并后</h3>
+<h3 id="2-2-合并后"><a class="header-anchor" href="#2-2-合并后">¶</a>2.2 合并后</h3>
 <p><img src="/images/2019-11-27_171626.png" alt="图片"></p>
-<h2 id="squash"><a class="header-anchor" href="#squash">¶</a>squash</h2>
+<h2 id="3-squash"><a class="header-anchor" href="#3-squash">¶</a>3 squash</h2>
 <pre><code>git checkout master
 git merge --squash test
 git commit -m &quot;add B1 B2&quot;
 </code></pre>
 <p><img src="/images/git003.gif" alt="图片"></p>
-<h3 id="合并前-v3"><a class="header-anchor" href="#合并前-v3">¶</a>合并前</h3>
+<h3 id="3-1-合并前"><a class="header-anchor" href="#3-1-合并前">¶</a>3.1 合并前</h3>
 <p><img src="/images/2019-11-27_181633.png" alt="图片"></p>
-<h3 id="合并后-v3"><a class="header-anchor" href="#合并后-v3">¶</a>合并后</h3>
+<h3 id="3-2-合并后"><a class="header-anchor" href="#3-2-合并后">¶</a>3.2 合并后</h3>
 <p><img src="/images/2019-11-27_181730.png" alt="图片"></p>
-<h2 id="分叉合并时merge和rebase区别"><a class="header-anchor" href="#分叉合并时merge和rebase区别">¶</a>分叉合并时merge和rebase区别</h2>
-<h3 id="merge"><a class="header-anchor" href="#merge">¶</a>merge</h3>
+<h2 id="4-分叉合并时merge和rebase区别"><a class="header-anchor" href="#4-分叉合并时merge和rebase区别">¶</a>4 分叉合并时merge和rebase区别</h2>
+<h3 id="4-1-merge"><a class="header-anchor" href="#4-1-merge">¶</a>4.1 merge</h3>
 <pre><code>git checkout test
 git merge master
 </code></pre>
 <p><img src="/images/2019-11-27_183326.png" alt="图片"></p>
 <p><img src="/images/2019-11-27_183423.png" alt="图片"></p>
-<h4 id="合并前-v4"><a class="header-anchor" href="#合并前-v4">¶</a>合并前</h4>
+<h4 id="4-1-1-合并前"><a class="header-anchor" href="#4-1-1-合并前">¶</a>4.1.1 合并前</h4>
 <p><img src="/images/2019-11-27_184239.png" alt="图片"></p>
-<h4 id="合并后-v4"><a class="header-anchor" href="#合并后-v4">¶</a>合并后</h4>
+<h4 id="4-1-2-合并后"><a class="header-anchor" href="#4-1-2-合并后">¶</a>4.1.2 合并后</h4>
 <p><img src="/images/2019-11-27_184416.png" alt="图片"></p>
-<h3 id="rebase"><a class="header-anchor" href="#rebase">¶</a>rebase</h3>
+<h3 id="4-2-rebase"><a class="header-anchor" href="#4-2-rebase">¶</a>4.2 rebase</h3>
 <pre><code>git checkout test
 git rebase master
 </code></pre>
 <p><img src="/images/2019-11-27_185410.png" alt="图片"></p>
 <p><img src="/images/2019-11-27_185454.png" alt="图片"></p>
-<h4 id="合并前-v5"><a class="header-anchor" href="#合并前-v5">¶</a>合并前</h4>
+<h4 id="4-2-1-合并前"><a class="header-anchor" href="#4-2-1-合并前">¶</a>4.2.1 合并前</h4>
 <p><img src="/images/2019-11-27_185535.png" alt="图片"></p>
-<h4 id="合并后-v5"><a class="header-anchor" href="#合并后-v5">¶</a>合并后</h4>
+<h4 id="4-2-2-合并后"><a class="header-anchor" href="#4-2-2-合并后">¶</a>4.2.2 合并后</h4>
 <p><img src="/images/2019-11-27_185649.png" alt="图片"></p>
-<h2 id="cherry-pick"><a class="header-anchor" href="#cherry-pick">¶</a>cherry-pick</h2>
+<h2 id="5-cherry-pick"><a class="header-anchor" href="#5-cherry-pick">¶</a>5 cherry-pick</h2>
 <ul>
 <li>用于单个提交合并，通常是引用别人开发分支上的提交</li>
 </ul>
-<h2 id="注意"><a class="header-anchor" href="#注意">¶</a>注意</h2>
+<h2 id="6-注意"><a class="header-anchor" href="#6-注意">¶</a>6 注意</h2>
 <ul>
 <li>绝不要在公共的分支上使用rebase。在你运行git rebase 之前，一定要问问你自己“有没有别人正在这个分支上工作？”</li>
 </ul>
-<h2 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h2>
+<h2 id="7-参考"><a class="header-anchor" href="#7-参考">¶</a>7 参考</h2>
 <ul>
 <li>
 <p>图解4种git合并分支方法：<br>
@@ -437,7 +437,7 @@ git rebase master
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fast-forward"><span class="nav-number">1.</span> <span class="nav-text">fast-forward</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并前"><span class="nav-number">1.1.</span> <span class="nav-text">合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并后"><span class="nav-number">1.2.</span> <span class="nav-text">合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-ff"><span class="nav-number">2.</span> <span class="nav-text">no-ff</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并前-v2"><span class="nav-number">2.1.</span> <span class="nav-text">合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并后-v2"><span class="nav-number">2.2.</span> <span class="nav-text">合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#squash"><span class="nav-number">3.</span> <span class="nav-text">squash</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并前-v3"><span class="nav-number">3.1.</span> <span class="nav-text">合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并后-v3"><span class="nav-number">3.2.</span> <span class="nav-text">合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分叉合并时merge和rebase区别"><span class="nav-number">4.</span> <span class="nav-text">分叉合并时merge和rebase区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#merge"><span class="nav-number">4.1.</span> <span class="nav-text">merge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并前-v4"><span class="nav-number">4.1.1.</span> <span class="nav-text">合并前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并后-v4"><span class="nav-number">4.1.2.</span> <span class="nav-text">合并后</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase"><span class="nav-number">4.2.</span> <span class="nav-text">rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并前-v5"><span class="nav-number">4.2.1.</span> <span class="nav-text">合并前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并后-v5"><span class="nav-number">4.2.2.</span> <span class="nav-text">合并后</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cherry-pick"><span class="nav-number">5.</span> <span class="nav-text">cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">6.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-fast-forward"><span class="nav-text">1 fast-forward</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-合并前"><span class="nav-text">1.1 合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-合并后"><span class="nav-text">1.2 合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-no-ff"><span class="nav-text">2 no-ff</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-合并前"><span class="nav-text">2.1 合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-合并后"><span class="nav-text">2.2 合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-squash"><span class="nav-text">3 squash</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-合并前"><span class="nav-text">3.1 合并前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-合并后"><span class="nav-text">3.2 合并后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-分叉合并时merge和rebase区别"><span class="nav-text">4 分叉合并时merge和rebase区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-merge"><span class="nav-text">4.1 merge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-合并前"><span class="nav-text">4.1.1 合并前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-合并后"><span class="nav-text">4.1.2 合并后</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-rebase"><span class="nav-text">4.2 rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-合并前"><span class="nav-text">4.2.1 合并前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-合并后"><span class="nav-text">4.2.2 合并后</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-cherry-pick"><span class="nav-text">5 cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-注意"><span class="nav-text">6 注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-参考"><span class="nav-text">7 参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
