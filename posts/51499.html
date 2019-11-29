@@ -51,17 +51,17 @@
   };
 </script>
 
-  <meta name="description" content="本文记录git rebase的使用方法。">
+  <meta name="description" content="🌟本文记录git rebase的使用方法🌟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git-rebase命令实战">
 <meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;51499.html">
 <meta property="og:site_name" content="Star">
-<meta property="og:description" content="本文记录git rebase的使用方法。">
+<meta property="og:description" content="🌟本文记录git rebase的使用方法🌟">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-28_150759.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-28_150939.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-28_151031.png">
-<meta property="og:updated_time" content="2019-11-28T12:25:26.747Z">
+<meta property="og:updated_time" content="2019-11-29T08:12:35.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-28_150759.png">
 
@@ -215,10 +215,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-28 14:40:00 / 修改时间：12:25:26" itemprop="dateCreated datePublished" datetime="2019-11-28T14:40:00Z">2019-11-28</time>
+              <time title="创建时间：2019-11-28 14:40:00" itemprop="dateCreated datePublished" datetime="2019-11-28T14:40:00Z">2019-11-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-29 08:12:35" itemprop="dateModified" datetime="2019-11-29T08:12:35Z">2019-11-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -244,7 +250,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>384</span>
+              <span>392</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -263,21 +269,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文记录git rebase的使用方法。</p>
+        <p>🌟本文记录git rebase的使用方法🌟</p>
 <a id="more"></a>
-
-<h2 id="Git操作"><a href="#Git操作" class="headerlink" title="Git操作"></a>Git操作</h2><pre><code>git checkout master
+<h2 id="git操作"><a class="header-anchor" href="#git操作">¶</a>Git操作</h2>
+<pre><code>git checkout master
 git pull
 git checkout test
 git rebase -i HEAD~2  //合并提交 --- 2表示合并两个
 git rebase master----&gt;git status---&gt;解决冲突---&gt;git add .---&gt;git rebase --continue
 git checkout master
 git merge test
-git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h2><p><img src="/images/2019-11-28_150759.png" alt="图片"><br><img src="/images/2019-11-28_150939.png" alt="图片"><br><img src="/images/2019-11-28_151031.png" alt="图片"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p>git在工作中正确的使用方式—-git rebase篇：<br><a href="https://blog.csdn.net/nrsc272420199/article/details/85555911" target="_blank" rel="noopener">https://blog.csdn.net/nrsc272420199/article/details/85555911</a>    </p>
+git push
+</code></pre>
+<h2 id="模拟操作"><a class="header-anchor" href="#模拟操作">¶</a>模拟操作</h2>
+<p><img src="/images/2019-11-28_150759.png" alt="图片"><br>
+<img src="/images/2019-11-28_150939.png" alt="图片"><br>
+<img src="/images/2019-11-28_151031.png" alt="图片"></p>
+<h2 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h2>
+<ul>
+<li>
+<p>git在工作中正确的使用方式----git rebase篇：<br>
+<a href="https://blog.csdn.net/nrsc272420199/article/details/85555911" target="_blank" rel="noopener">https://blog.csdn.net/nrsc272420199/article/details/85555911</a></p>
 </li>
-<li><p>git(十六) git rebase 实战：<br><a href="https://blog.csdn.net/wzq6578702/article/details/76736008" target="_blank" rel="noopener">https://blog.csdn.net/wzq6578702/article/details/76736008</a>  </p>
+<li>
+<p>git(十六) git rebase 实战：<br>
+<a href="https://blog.csdn.net/wzq6578702/article/details/76736008" target="_blank" rel="noopener">https://blog.csdn.net/wzq6578702/article/details/76736008</a></p>
 </li>
 </ul>
 
@@ -361,7 +377,7 @@ git push</code></pre><h2 id="模拟操作"><a href="#模拟操作" class="header
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git操作"><span class="nav-number">1.</span> <span class="nav-text">Git操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟操作"><span class="nav-number">2.</span> <span class="nav-text">模拟操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git操作"><span class="nav-number">1.</span> <span class="nav-text">¶Git操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟操作"><span class="nav-number">2.</span> <span class="nav-text">¶模拟操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">¶参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
