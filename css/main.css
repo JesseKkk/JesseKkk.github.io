@@ -1147,7 +1147,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #95b66b;
+  background: #ff4fc4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2224,7 +2224,7 @@ ul.breadcrumb li + li:last-child {
   position: relative;
 }
 .site-meta {
-  background: url("/images/wallhaven-qd8klq.jpg");
+  background: url("https://w.wallhaven.cc/full/qd/wallhaven-qd8klq.jpg");
   color: #fff;
   padding: 20px 0;
 }
