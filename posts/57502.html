@@ -75,7 +75,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185454.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185535.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;2019-11-27_185649.png">
-<meta property="og:updated_time" content="2019-11-29T12:28:11.468Z">
+<meta property="og:updated_time" content="2019-11-30T05:50:21.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;git001.gif">
 
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 12:28:11" itemprop="dateModified" datetime="2019-11-29T12:28:11Z">2019-11-29</time>
+                <time title="修改时间：2019-11-30 05:50:21" itemprop="dateModified" datetime="2019-11-30T05:50:21Z">2019-11-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>600</span>
+              <span>611</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,28 +286,21 @@
         <p>🌟本文总结了Git分支合并方法🌟</p>
 <a id="more"></a>
 <h2 id="1-fast-forward"><a class="header-anchor" href="#1-fast-forward">¶</a>1 fast-forward</h2>
-<pre><code>git checkout master
-git merge test
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge test</span><br></pre></td></tr></table></figure>
 <p><img src="/images/git001.gif" alt="图片"></p>
 <h3 id="1-1-合并前"><a class="header-anchor" href="#1-1-合并前">¶</a>1.1 合并前</h3>
 <p><img src="/images/2019-11-27_170740.png" alt="图片"></p>
 <h3 id="1-2-合并后"><a class="header-anchor" href="#1-2-合并后">¶</a>1.2 合并后</h3>
 <p><img src="/images/2019-11-27_170832.png" alt="图片"></p>
 <h2 id="2-no-ff"><a class="header-anchor" href="#2-no-ff">¶</a>2 no-ff</h2>
-<pre><code>git checkout master
-git merge --no-ff test
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff test</span><br></pre></td></tr></table></figure>
 <p><img src="/images/git002.gif" alt="图片"></p>
 <h3 id="2-1-合并前"><a class="header-anchor" href="#2-1-合并前">¶</a>2.1 合并前</h3>
 <p><img src="/images/2019-11-27_171419.png" alt="图片"></p>
 <h3 id="2-2-合并后"><a class="header-anchor" href="#2-2-合并后">¶</a>2.2 合并后</h3>
 <p><img src="/images/2019-11-27_171626.png" alt="图片"></p>
 <h2 id="3-squash"><a class="header-anchor" href="#3-squash">¶</a>3 squash</h2>
-<pre><code>git checkout master
-git merge --squash test
-git commit -m &quot;add B1 B2&quot;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --squash test</span><br><span class="line">git commit -m &quot;add B1 B2&quot;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/git003.gif" alt="图片"></p>
 <h3 id="3-1-合并前"><a class="header-anchor" href="#3-1-合并前">¶</a>3.1 合并前</h3>
 <p><img src="/images/2019-11-27_181633.png" alt="图片"></p>
@@ -315,9 +308,7 @@ git commit -m &quot;add B1 B2&quot;
 <p><img src="/images/2019-11-27_181730.png" alt="图片"></p>
 <h2 id="4-分叉合并时merge和rebase区别"><a class="header-anchor" href="#4-分叉合并时merge和rebase区别">¶</a>4 分叉合并时merge和rebase区别</h2>
 <h3 id="4-1-merge"><a class="header-anchor" href="#4-1-merge">¶</a>4.1 merge</h3>
-<pre><code>git checkout test
-git merge master
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br><span class="line">git merge master</span><br></pre></td></tr></table></figure>
 <p><img src="/images/2019-11-27_183326.png" alt="图片"></p>
 <p><img src="/images/2019-11-27_183423.png" alt="图片"></p>
 <h4 id="4-1-1-合并前"><a class="header-anchor" href="#4-1-1-合并前">¶</a>4.1.1 合并前</h4>
@@ -325,9 +316,7 @@ git merge master
 <h4 id="4-1-2-合并后"><a class="header-anchor" href="#4-1-2-合并后">¶</a>4.1.2 合并后</h4>
 <p><img src="/images/2019-11-27_184416.png" alt="图片"></p>
 <h3 id="4-2-rebase"><a class="header-anchor" href="#4-2-rebase">¶</a>4.2 rebase</h3>
-<pre><code>git checkout test
-git rebase master
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
 <p><img src="/images/2019-11-27_185410.png" alt="图片"></p>
 <p><img src="/images/2019-11-27_185454.png" alt="图片"></p>
 <h4 id="4-2-1-合并前"><a class="header-anchor" href="#4-2-1-合并前">¶</a>4.2.1 合并前</h4>
@@ -359,6 +348,22 @@ git rebase master
     
     
     
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="JesseKkk 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
         
 
 <div>
