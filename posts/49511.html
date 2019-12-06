@@ -67,7 +67,10 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_06.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_07.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_08.png">
-<meta property="og:updated_time" content="2019-12-05T08:16:37.706Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_09.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_11.png">
+<meta property="og:updated_time" content="2019-12-06T09:03:12.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_03_01.png">
 
@@ -221,10 +224,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-05 15:45:51 / 修改时间：08:16:37" itemprop="dateCreated datePublished" datetime="2019-12-05T15:45:51Z">2019-12-05</time>
+              <time title="创建时间：2019-12-05 15:45:51" itemprop="dateCreated datePublished" datetime="2019-12-05T15:45:51Z">2019-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-06 09:03:12" itemprop="dateModified" datetime="2019-12-06T09:03:12Z">2019-12-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -256,7 +265,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>104</span>
+              <span>453</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -295,6 +304,21 @@
 <p><img src="/images/012_03_07.png" alt="图片"></p>
 <h2 id="4-访问修饰符"><a class="header-anchor" href="#4-访问修饰符">¶</a>4 访问修饰符</h2>
 <p><img src="/images/012_03_08.png" alt="图片"></p>
+<h2 id="5-object类"><a class="header-anchor" href="#5-object类">¶</a>5 Object类</h2>
+<p><img src="/images/012_03_09.png" alt="图片"></p>
+<h2 id="6-final"><a class="header-anchor" href="#6-final">¶</a>6 final</h2>
+<p><img src="/images/012_03_10.png" alt="图片"></p>
+<h3 id="6-1-static和final的区别"><a class="header-anchor" href="#6-1-static和final的区别">¶</a>6.1 static和final的区别</h3>
+<ul>
+<li>static修饰的时候代表对象是静态</li>
+<li>final修饰的时候代表对象只能赋值一次，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> b=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>这里a和b的区别在于，a在程序里可以被重新赋值为2或3或等等的整数，而b在程序里不能被重新赋值，b永远都为1，也就是说b是一个常量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> c=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> b=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>这里c和b的区别在于，b存放在静态空间，不会在程序运行时被释放，它永远占着内存直到程序终止，而c在程序用完它而不会再用到它的时候就会被自动释放，不再占用内存。当一个常数或字符串我们需要在程序里反复反复使用的时候，我们就可以把它定义为static final，这样内存就不用重复的申请和释放空间。</p>
+<h2 id="6-注解"><a class="header-anchor" href="#6-注解">¶</a>6 注解</h2>
+<p><img src="/images/012_03_11.png" alt="图片"></p>
 
     </div>
 
@@ -395,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-继承"><span class="nav-text">1 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-概念"><span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-语法"><span class="nav-text">1.2 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-初始化顺序"><span class="nav-text">1.3 初始化顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-super"><span class="nav-text">2 super</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-super的使用"><span class="nav-text">2.1 super的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-注意事项"><span class="nav-text">2.2 注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-super-pk-this"><span class="nav-text">2.3 super PK this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-方法重写-pk-方法重载"><span class="nav-text">3 方法重写 PK 方法重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-访问修饰符"><span class="nav-text">4 访问修饰符</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-继承"><span class="nav-text">1 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-概念"><span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-语法"><span class="nav-text">1.2 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-初始化顺序"><span class="nav-text">1.3 初始化顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-super"><span class="nav-text">2 super</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-super的使用"><span class="nav-text">2.1 super的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-注意事项"><span class="nav-text">2.2 注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-super-pk-this"><span class="nav-text">2.3 super PK this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-方法重写-pk-方法重载"><span class="nav-text">3 方法重写 PK 方法重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-访问修饰符"><span class="nav-text">4 访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-object类"><span class="nav-text">5 Object类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-final"><span class="nav-text">6 final</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-static和final的区别"><span class="nav-text">6.1 static和final的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-注解"><span class="nav-text">6 注解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
