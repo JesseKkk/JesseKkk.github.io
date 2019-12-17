@@ -64,7 +64,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_05_03.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_05_04.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_05_05.png">
-<meta property="og:updated_time" content="2019-12-09T14:18:10.760Z">
+<meta property="og:updated_time" content="2019-12-17T03:32:46.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;012_05_01.png">
 
@@ -218,10 +218,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-09 21:34:11 / 修改时间：14:18:10" itemprop="dateCreated datePublished" datetime="2019-12-09T21:34:11Z">2019-12-09</time>
+              <time title="创建时间：2019-12-09 21:34:11" itemprop="dateCreated datePublished" datetime="2019-12-09T21:34:11Z">2019-12-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 03:32:46" itemprop="dateModified" datetime="2019-12-17T03:32:46Z">2019-12-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -253,7 +259,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>917</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -296,6 +302,7 @@
 <p><img src="/images/012_05_03.png" alt="图片"></p>
 <h2 id="4-接口"><a class="header-anchor" href="#4-接口">¶</a>4 接口</h2>
 <p><img src="/images/012_05_04.png" alt="图片"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 接口类的访问权限只能为：public和默认</span></span><br><span class="line"><span class="comment"> * Created by Kong on 2019/12/9.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">INet</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 接口中抽象方法可以不写abstract关键字</span></span><br><span class="line"><span class="comment">     * 方法访问修饰符默认为public</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">network</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//接口可以包含常量，默认public static final</span></span><br><span class="line">    <span class="keyword">int</span> TEMP = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//default：默认方法，可以带方法体  jdk1.8后新增</span></span><br><span class="line">    <span class="comment">//可以在实现类中重写，并可以通过接口的引用调用</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span>  <span class="keyword">void</span> <span class="title">connection</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是接口中的默认连接"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//static：静态方法，可以带方法体</span></span><br><span class="line">    <span class="comment">//不可以在实现类中重写，可以用接口名调用</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是接口中的静态方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/012_05_05.png" alt="图片"></p>
 <h2 id="5-内部类"><a class="header-anchor" href="#5-内部类">¶</a>5 内部类</h2>
 <ul>
