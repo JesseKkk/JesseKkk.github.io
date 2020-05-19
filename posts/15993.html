@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="XiXYgjUtLuNSYitvkYIIatUzr5WXV9Jg29TN1Hs1Wbc">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","width":220,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="🌟本文是MyBatis进阶的学习总结🌟">
+<meta name="keywords" content="muke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis进阶">
+<meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;15993.html">
+<meta property="og:site_name" content="Star">
+<meta property="og:description" content="🌟本文是MyBatis进阶的学习总结🌟">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_05.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_07.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_08.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_09.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_11.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_12.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_13.png">
+<meta property="og:updated_time" content="2020-04-09T14:11:06.537Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;032_04_01.png">
+
+<link rel="canonical" href="https://jessekkk.github.io/posts/15993.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>MyBatis进阶 | Star</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Star</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jessekkk.github.io/posts/15993.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/set_log.png">
+      <meta itemprop="name" content="JesseKkk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Star">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          MyBatis进阶
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-08 10:55:22" itemprop="dateCreated datePublished" datetime="2020-04-08T10:55:22Z">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-09 14:11:06" itemprop="dateModified" datetime="2020-04-09T14:11:06Z">2020-04-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E4%B8%8E%E5%AE%9E%E6%88%98/" itemprop="url" rel="index">
+                    <span itemprop="name">Java数据库开发与实战</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E4%B8%8E%E5%AE%9E%E6%88%98/02-MyBatis%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">02_MyBatis从入门到进阶</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/15993.html" class="post-meta-item leancloud_visitors" data-flag-title="MyBatis进阶" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>13k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>12 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>🌟本文是MyBatis进阶的学习总结🌟</p>
+<a id="more"></a>
+<h2 id="1-mybatis日志管理与动态sql"><a class="header-anchor" href="#1-mybatis日志管理与动态sql">¶</a>1 MyBatis日志管理与动态SQL</h2>
+<h3 id="1-1-mybatis日志管理"><a class="header-anchor" href="#1-1-mybatis日志管理">¶</a>1.1 MyBatis日志管理</h3>
+<h4 id="1-1-1-日志"><a class="header-anchor" href="#1-1-1-日志">¶</a>1.1.1 日志</h4>
+<p><img src="/images/032_04_01.png" alt="图片"></p>
+<h4 id="1-1-2-slf4j与logback"><a class="header-anchor" href="#1-1-2-slf4j与logback">¶</a>1.1.2 SLF4J与Logback</h4>
+<p><img src="/images/032_04_02.png" alt="图片"></p>
+<h4 id="1-1-3-具体实现"><a class="header-anchor" href="#1-1-3-具体实现">¶</a>1.1.3 具体实现</h4>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"console"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;36&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        日志输出级别（优先级高到低）</span></span><br><span class="line"><span class="comment">        error: 错误 - 系统的故障日志</span></span><br><span class="line"><span class="comment">        warn:  警告 - 存在风险或使用不当的日志</span></span><br><span class="line"><span class="comment">        info: 一般性消息</span></span><br><span class="line"><span class="comment">        de<span class="doctag">bug:</span> 程勋内部用户调试信息</span></span><br><span class="line"><span class="comment">        trace: 程序运行的跟踪信息</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"debug"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"console"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-mybatis动态sql"><a class="header-anchor" href="#1-2-mybatis动态sql">¶</a>1.2 MyBatis动态SQL</h3>
+<p><img src="/images/032_04_03.png" alt="图片"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"dynamicSQL"</span> <span class="attr">parameterType</span>=<span class="string">"java.util.Map"</span> <span class="attr">resultType</span>=<span class="string">"com.jesse.mybatis.entity.Goods"</span>&gt;</span></span><br><span class="line">    SELECT * FROM t_goods</span><br><span class="line">    <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"categoryId != null"</span>&gt;</span></span><br><span class="line">            and category_id = #&#123;categoryId&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"currentPrice != null"</span>&gt;</span></span><br><span class="line">            and current_price &amp;lt; #&#123;currentPrice&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testDynamicSQL</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        Map param = <span class="keyword">new</span> HashMap();</span><br><span class="line">        param.put(<span class="string">"categoryId"</span>, <span class="number">44</span>);</span><br><span class="line">        param.put(<span class="string">"currentPrice"</span>, <span class="number">500</span>);</span><br><span class="line">        <span class="comment">//查询条件</span></span><br><span class="line">        List&lt;Goods&gt; list = session.selectList(<span class="string">"goods.dynamicSQL"</span>, param);</span><br><span class="line">        <span class="keyword">for</span> (Goods g:list)&#123;</span><br><span class="line">            System.out.println(g.getTitle() + <span class="string">":"</span> + g.getCategoryId() + <span class="string">":"</span> +</span><br><span class="line">                    g.getCurrentPrice());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-mybatis二级缓存"><a class="header-anchor" href="#2-mybatis二级缓存">¶</a>2 MyBatis二级缓存</h2>
+<h3 id="2-1-缓存"><a class="header-anchor" href="#2-1-缓存">¶</a>2.1 缓存</h3>
+<p><img src="/images/032_04_04.png" alt="图片"></p>
+<h3 id="2-2-缓存范围"><a class="header-anchor" href="#2-2-缓存范围">¶</a>2.2 缓存范围</h3>
+<p><img src="/images/032_04_05.png" alt="图片"></p>
+<h3 id="2-3-二级缓存运行规则"><a class="header-anchor" href="#2-3-二级缓存运行规则">¶</a>2.3 二级缓存运行规则</h3>
+<p><img src="/images/032_04_06.png" alt="图片"></p>
+<h3 id="2-4-一级缓存测试"><a class="header-anchor" href="#2-4-一级缓存测试">¶</a>2.4 一级缓存测试</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLv1Cache</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        Goods goods = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        Goods goods1 = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        System.out.println(goods.hashCode() + <span class="string">":"</span> + goods1.hashCode());</span><br><span class="line">        System.out.println(goods.getTitle());</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        Goods goods = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        session.commit();<span class="comment">//commit提交时对该namespace缓存强制清空</span></span><br><span class="line">        Goods goods1 = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        System.out.println(goods.hashCode() + <span class="string">":"</span> + goods1.hashCode());</span><br><span class="line">        System.out.println(goods.getTitle());</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-5-二级缓存测试"><a class="header-anchor" href="#2-5-二级缓存测试">¶</a>2.5 二级缓存测试</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--开启二级缓存</span></span><br><span class="line"><span class="comment">    eviction 是缓存的清除策略，当缓存对象数量达到上限后，自动触发对应算法对缓存对象清除</span></span><br><span class="line"><span class="comment">        1. LRU - 最近最少使用的：移除最长时间不被使用的对象</span></span><br><span class="line"><span class="comment">        2. FIFO - 先进先出：按对象进入缓存的顺序来移除他们</span></span><br><span class="line"><span class="comment">        3. SOFT - 软引用：移除基于垃圾回收器状态和软引用规则的对象</span></span><br><span class="line"><span class="comment">        4. WEAK - 弱引用：更积极地移除基于垃圾回收器状态和弱引用规则的对象</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    flushInterval 代表间隔多长时间自动清空缓存，单位毫秒，600000毫秒 = 10分钟</span></span><br><span class="line"><span class="comment">    size 缓存存储上限，用于保存对象或集合（1个集合是一个对象）的数量上限</span></span><br><span class="line"><span class="comment">    readOnly 设置为true，代表返回只读缓存，每次从缓存取出的是缓存对象本省，这种执行效率较高</span></span><br><span class="line"><span class="comment">             设置为false, 代表每次取出的是缓存对象的"副本"，每次取出的对象是不同的，这种安全性较高</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">cache</span> <span class="attr">eviction</span>=<span class="string">"LRU"</span> <span class="attr">flushInterval</span>=<span class="string">"600000"</span> <span class="attr">size</span>=<span class="string">"512"</span> <span class="attr">readOnly</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLv2Cache</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        Goods goods = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        System.out.println(goods.hashCode());</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        Goods goods = session.selectOne(<span class="string">"goods.selectById"</span>, <span class="number">1603</span>);</span><br><span class="line">        System.out.println(goods.hashCode());</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-mybatis多表级联查询"><a class="header-anchor" href="#3-mybatis多表级联查询">¶</a>3 MyBatis多表级联查询</h2>
+<ul>
+<li>多表关联查询：两个表通过主外键，在一条SQL语句，完成所有数据的提取</li>
+<li>多表级联查询：通过一个对象，获得与它关联的另一个对象，执行多条SQL语句</li>
+</ul>
+<h3 id="3-1-常见实体关系"><a class="header-anchor" href="#3-1-常见实体关系">¶</a>3.1 常见实体关系</h3>
+<p><img src="/images/032_04_07.png" alt="图片"></p>
+<h3 id="3-2-onetomany对象级联查询"><a class="header-anchor" href="#3-2-onetomany对象级联查询">¶</a>3.2 OneToMany对象级联查询</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jesse.mybatis.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Goods</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer goodsId;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String subTitle;</span><br><span class="line">    <span class="keyword">private</span> Float originalCost;</span><br><span class="line">    <span class="keyword">private</span> Float currentPrice;</span><br><span class="line">    <span class="keyword">private</span> Float discount;</span><br><span class="line">    <span class="keyword">private</span> Integer isFreeDelivery;</span><br><span class="line">    <span class="keyword">private</span> Integer categoryId;</span><br><span class="line">    <span class="keyword">private</span> List&lt;GoodsDetail&gt; goodsDetails;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getGoodsId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goodsId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoodsId</span><span class="params">(Integer goodsId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goodsId = goodsId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String title)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSubTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> subTitle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSubTitle</span><span class="params">(String subTitle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.subTitle = subTitle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getOriginalCost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> originalCost;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOriginalCost</span><span class="params">(Float originalCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.originalCost = originalCost;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getCurrentPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> currentPrice;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCurrentPrice</span><span class="params">(Float currentPrice)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.currentPrice = currentPrice;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getDiscount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> discount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDiscount</span><span class="params">(Float discount)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.discount = discount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getIsFreeDelivery</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> isFreeDelivery;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIsFreeDelivery</span><span class="params">(Integer isFreeDelivery)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.isFreeDelivery = isFreeDelivery;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getCategoryId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> categoryId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCategoryId</span><span class="params">(Integer categoryId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.categoryId = categoryId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;GoodsDetail&gt; <span class="title">getGoodsDetails</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goodsDetails;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoodsDetails</span><span class="params">(List&lt;GoodsDetail&gt; goodsDetails)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goodsDetails = goodsDetails;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"mappers/goods.xml"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"mappers/goods_detail.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"goodsDetail"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectByGoodsId"</span> <span class="attr">parameterType</span>=<span class="string">"Integer"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">resultType</span>=<span class="string">"com.jesse.mybatis.entity.GoodsDetail"</span>&gt;</span></span><br><span class="line">        SELECT * FROM t_goods_detail WHERE goods_id = #&#123;value&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    resultMap可用于说明一对多或者多对一的映射逻辑</span></span><br><span class="line"><span class="comment">    id 是resultMap属性引用的标志</span></span><br><span class="line"><span class="comment">    type 指向One的实体（Goods）</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"rmGoods1"</span> <span class="attr">type</span>=<span class="string">"com.jesse.mybatis.entity.Goods"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--映射goods对象的主键到goods_id字段--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"goods_id"</span> <span class="attr">property</span>=<span class="string">"goodsId"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        collection的含义是，在</span></span><br><span class="line"><span class="comment">        SELECT * FROM t_goods LIMIT 0,1 得到结果后，对所有Goods对象遍历得到goods_id字段</span></span><br><span class="line"><span class="comment">        并代入到goodsDetail命名空间的selectByGoodsId的SQL中执行查询，</span></span><br><span class="line"><span class="comment">        将得到的"商品详情"集合赋值给goodsDetails List对象。</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">collection</span> <span class="attr">column</span>=<span class="string">"goods_id"</span> <span class="attr">property</span>=<span class="string">"goodsDetails"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">select</span>=<span class="string">"goodsDetail.selectByGoodsId"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectOneToMany"</span> <span class="attr">resultMap</span>=<span class="string">"rmGoods1"</span>&gt;</span></span><br><span class="line">    SELECT * FROM t_goods LIMIT 0,1</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOneToMany</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        List&lt;Goods&gt; list = session.selectList(<span class="string">"goods.selectOneToMany"</span>);</span><br><span class="line">        <span class="keyword">for</span> (Goods goods : list) &#123;</span><br><span class="line">            System.out.println(goods.getTitle() + <span class="string">":"</span> + goods.getGoodsDetails().size());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-manytoone对象级联查询"><a class="header-anchor" href="#3-3-manytoone对象级联查询">¶</a>3.3 ManyToOne对象级联查询</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"rmGoodsDetail"</span> <span class="attr">type</span>=<span class="string">"com.jesse.mybatis.entity.GoodsDetail"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"gd_id"</span> <span class="attr">property</span>=<span class="string">"gdId"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"goods_id"</span> <span class="attr">property</span>=<span class="string">"goodsId"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">association</span> <span class="attr">column</span>=<span class="string">"goods_id"</span> <span class="attr">property</span>=<span class="string">"goods"</span> <span class="attr">select</span>=<span class="string">"goods.selectById"</span>&gt;</span><span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectManyToOne"</span> <span class="attr">resultMap</span>=<span class="string">"rmGoodsDetail"</span>&gt;</span></span><br><span class="line">    SELECT * FROM t_goods_detail LIMIT 0,20</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectById"</span> <span class="attr">parameterType</span>=<span class="string">"Integer"</span> <span class="attr">resultType</span>=<span class="string">"com.jesse.mybatis.entity.Goods"</span>&gt;</span></span><br><span class="line">    SELECT * FROM t_goods WHERE goods_id = #&#123;value&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testManyToOne</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        List&lt;GoodsDetail&gt; list = session.selectList(<span class="string">"goodsDetail.selectManyToOne"</span>);</span><br><span class="line">        <span class="keyword">for</span> (GoodsDetail gd : list) &#123;</span><br><span class="line">            System.out.println(gd.getGdPicUrl() + <span class="string">":"</span> + gd.getGoods().getTitle());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-pagehelper分页插件"><a class="header-anchor" href="#4-pagehelper分页插件">¶</a>4 PageHelper分页插件</h2>
+<h3 id="4-1-分页查询的麻烦事"><a class="header-anchor" href="#4-1-分页查询的麻烦事">¶</a>4.1 分页查询的麻烦事</h3>
+<p><img src="/images/032_04_08.png" alt="图片"></p>
+<h3 id="4-2-pagehelper使用流程"><a class="header-anchor" href="#4-2-pagehelper使用流程">¶</a>4.2 PageHelper使用流程</h3>
+<p><img src="/images/032_04_09.png" alt="图片"></p>
+<h3 id="4-3-mysql实现"><a class="header-anchor" href="#4-3-mysql实现">¶</a>4.3 mysql实现</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.jsqlparser<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jsqlparser<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--启用Pagehelper分页插件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span> <span class="attr">interceptor</span>=<span class="string">"com.github.pagehelper.PageInterceptor"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--设置数据库类型--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"helperDialect"</span> <span class="attr">value</span>=<span class="string">"mysql"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--分页合理化--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"reasonable"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectPage"</span> <span class="attr">resultType</span>=<span class="string">"com.jesse.mybatis.entity.Goods"</span>&gt;</span></span><br><span class="line">    SELECT * FROM t_goods WHERE current_price &amp;lt; 1000</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSelectPage</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        <span class="comment">//startPage方法会自动将下一次查询进行分页</span></span><br><span class="line">        PageHelper.startPage(<span class="number">2</span>,<span class="number">10</span>);</span><br><span class="line">        Page&lt;Goods&gt; page = (Page)session.selectList(<span class="string">"goods.selectPage"</span>);</span><br><span class="line">        System.out.println(<span class="string">"总页数："</span> + page.getPages());</span><br><span class="line">        System.out.println(<span class="string">"总记录数："</span> + page.getTotal());</span><br><span class="line">        System.out.println(<span class="string">"开始行号："</span> + page.getStartRow());</span><br><span class="line">        System.out.println(<span class="string">"结束行号："</span> + page.getEndRow());</span><br><span class="line">        System.out.println(<span class="string">"当前页码："</span> + page.getPageNum());</span><br><span class="line">        List&lt;Goods&gt; data = page.getResult();<span class="comment">//当前页数据</span></span><br><span class="line">        <span class="keyword">for</span> (Goods g : data) &#123;</span><br><span class="line">            System.out.println(g.getTitle());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-不同数据库的分页实现原理"><a class="header-anchor" href="#4-4-不同数据库的分页实现原理">¶</a>4.4 不同数据库的分页实现原理</h3>
+<p><img src="/images/032_04_10.png" alt="图片"></p>
+<p><img src="/images/032_04_11.png" alt="图片"></p>
+<p><img src="/images/032_04_12.png" alt="图片"></p>
+<p><img src="/images/032_04_13.png" alt="图片"></p>
+<h2 id="5-mybatis整合c3p0连接池"><a class="header-anchor" href="#5-mybatis整合c3p0连接池">¶</a>5 MyBatis整合C3P0连接池</h2>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jesse.mybatis.datasource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mchange.v2.c3p0.ComboPooledDataSource;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.datasource.unpooled.UnpooledDataSourceFactory;</span><br><span class="line"><span class="comment">//C3P0与MyBatis兼容使用的数据源工厂</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C3P0DataSourceFactory</span> <span class="keyword">extends</span> <span class="title">UnpooledDataSourceFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">C3P0DataSourceFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataSource = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--设置默认指向的数据库--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"dev"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置环境，不同的环境不同的id名字--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"dev"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--采用JDBC方式对数据库事务进行commit/rollback--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--采用连接池方式管理数据库连接--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--&lt;dataSource type="POOLED"&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"com.jesse.mybatis.datasource.C3P0DataSourceFactory"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"com.mysql.cj.jdbc.Driver"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;useJDBCCompliantTimezoneShift=true&amp;amp;useLegacyDatetimeCode=false&amp;amp;serverTimezone=UTC"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"1234"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"initialPoolSize"</span> <span class="attr">value</span>=<span class="string">"5"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxPoolSize"</span> <span class="attr">value</span>=<span class="string">"20"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minPoolSize"</span> <span class="attr">value</span>=<span class="string">"5"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-mybatis批处理"><a class="header-anchor" href="#6-mybatis批处理">¶</a>6 MyBatis批处理</h2>
+<h3 id="6-1-批量增加"><a class="header-anchor" href="#6-1-批量增加">¶</a>6.1 批量增加</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    INSERT INTO table</span></span><br><span class="line"><span class="comment">    VALUES ("a", "a1", "a2"),("b", "b1", "b2"),(....)</span></span><br><span class="line"><span class="comment">    局限：</span></span><br><span class="line"><span class="comment">     1、无法获得插入数据的id</span></span><br><span class="line"><span class="comment">     2、批量生成的SQL太长，可能会被服务器拒绝</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"batchInsert"</span> <span class="attr">parameterType</span>=<span class="string">"java.util.List"</span>&gt;</span></span><br><span class="line">     INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)</span><br><span class="line">     VALUES</span><br><span class="line">     <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span></span><br><span class="line">         (#&#123;item.title&#125;, #&#123;item.subTitle&#125;, #&#123;item.originalCost&#125;, #&#123;item.currentPrice&#125;, #&#123;item.discount&#125;, #&#123;item.isFreeDelivery&#125;, #&#123;item.categoryId&#125;)</span><br><span class="line">     <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBatchInsert</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">long</span> st = <span class="keyword">new</span> Date().getTime();</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">            Goods goods = <span class="keyword">new</span> Goods();</span><br><span class="line">            goods.setTitle(<span class="string">"测试商品"</span>);</span><br><span class="line">            goods.setSubTitle(<span class="string">"测试子标题"</span>);</span><br><span class="line">            goods.setOriginalCost(<span class="number">200f</span>);</span><br><span class="line">            goods.setCurrentPrice(<span class="number">100f</span>);</span><br><span class="line">            goods.setDiscount(<span class="number">0.5f</span>);</span><br><span class="line">            goods.setIsFreeDelivery(<span class="number">1</span>);</span><br><span class="line">            goods.setCategoryId(<span class="number">43</span>);</span><br><span class="line"></span><br><span class="line">            list.add(goods);</span><br><span class="line">        &#125;</span><br><span class="line">        session.insert(<span class="string">"goods.batchInsert"</span>, list);</span><br><span class="line">        session.commit();<span class="comment">//提交事务数据</span></span><br><span class="line">        <span class="keyword">long</span> et = <span class="keyword">new</span> Date().getTime();</span><br><span class="line">        System.out.println(<span class="string">"执行时间："</span> + (et -st) + <span class="string">"毫秒"</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">if</span> (session != <span class="keyword">null</span>)&#123;</span><br><span class="line">            session.rollback();<span class="comment">//回滚事务</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-批量删除"><a class="header-anchor" href="#6-2-批量删除">¶</a>6.2 批量删除</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"batchDelete"</span> <span class="attr">parameterType</span>=<span class="string">"java.util.List"</span>&gt;</span></span><br><span class="line">    DELETE FROM t_goods WHERE goods_id in</span><br><span class="line">    <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> <span class="attr">separator</span>=<span class="string">","</span>&gt;</span></span><br><span class="line">        #&#123;item&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBatchDelete</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SqlSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">long</span> st = <span class="keyword">new</span> Date().getTime();</span><br><span class="line">        session = MyBatisUtils.openSession();</span><br><span class="line">        List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        list.add(<span class="number">1920</span>);</span><br><span class="line">        list.add(<span class="number">1921</span>);</span><br><span class="line">        list.add(<span class="number">1922</span>);</span><br><span class="line">        session.delete(<span class="string">"goods.batchDelete"</span>, list);</span><br><span class="line">        session.commit();<span class="comment">//提交事务数据</span></span><br><span class="line">        <span class="keyword">long</span> et = <span class="keyword">new</span> Date().getTime();</span><br><span class="line">        System.out.println(<span class="string">"执行时间："</span> + (et -st) + <span class="string">"毫秒"</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        <span class="keyword">if</span> (session != <span class="keyword">null</span>)&#123;</span><br><span class="line">            session.rollback();<span class="comment">//回滚事务</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        MyBatisUtils.closeSession(session);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-mabatis注解开发方式-略"><a class="header-anchor" href="#7-mabatis注解开发方式-略">¶</a>7 MaBatis注解开发方式（略）</h2>
+
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="JesseKkk 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>JesseKkk
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://jessekkk.github.io/posts/15993.html" title="MyBatis进阶">https://jessekkk.github.io/posts/15993.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/muke/" rel="tag"><i class="fa fa-tag"></i> muke</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/13864.html" rel="next" title="MyBatis入门">
+                  <i class="fa fa-chevron-left"></i> MyBatis入门
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/posts/38247.html" rel="prev" title="蛋糕商城">
+                  蛋糕商城 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzM4Ny8yMzg4Nw=="></div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mybatis日志管理与动态sql"><span class="nav-text">1 MyBatis日志管理与动态SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-mybatis日志管理"><span class="nav-text">1.1 MyBatis日志管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-日志"><span class="nav-text">1.1.1 日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-slf4j与logback"><span class="nav-text">1.1.2 SLF4J与Logback</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3-具体实现"><span class="nav-text">1.1.3 具体实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-mybatis动态sql"><span class="nav-text">1.2 MyBatis动态SQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-mybatis二级缓存"><span class="nav-text">2 MyBatis二级缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-缓存"><span class="nav-text">2.1 缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-缓存范围"><span class="nav-text">2.2 缓存范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-二级缓存运行规则"><span class="nav-text">2.3 二级缓存运行规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-一级缓存测试"><span class="nav-text">2.4 一级缓存测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-二级缓存测试"><span class="nav-text">2.5 二级缓存测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-mybatis多表级联查询"><span class="nav-text">3 MyBatis多表级联查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-常见实体关系"><span class="nav-text">3.1 常见实体关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-onetomany对象级联查询"><span class="nav-text">3.2 OneToMany对象级联查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-manytoone对象级联查询"><span class="nav-text">3.3 ManyToOne对象级联查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-pagehelper分页插件"><span class="nav-text">4 PageHelper分页插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-分页查询的麻烦事"><span class="nav-text">4.1 分页查询的麻烦事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-pagehelper使用流程"><span class="nav-text">4.2 PageHelper使用流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-mysql实现"><span class="nav-text">4.3 mysql实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-不同数据库的分页实现原理"><span class="nav-text">4.4 不同数据库的分页实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-mybatis整合c3p0连接池"><span class="nav-text">5 MyBatis整合C3P0连接池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-mybatis批处理"><span class="nav-text">6 MyBatis批处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-批量增加"><span class="nav-text">6.1 批量增加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-批量删除"><span class="nav-text">6.2 批量删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-mabatis注解开发方式-略"><span class="nav-text">7 MaBatis注解开发方式（略）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="JesseKkk"
+    src="/images/set_log.png">
+  <p class="site-author-name" itemprop="name">JesseKkk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JesseKkk" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;JesseKkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/JesseKkk" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;JesseKkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Jesse_Kkk" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;Jesse_Kkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/JesseKkk1" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;JesseKkk1" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h4 class="widget-title" style="font-size:20px;text-align:center;color:#000000;margin:20px 0 0px;">Tag Cloud</h4>
+          <div id="myCanvasContainer" class="widget tagcloud" style="font-size:20px;">
+              <canvas width="220" height="200" id="resCanvas" style="width=100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-bug/" rel="tag">blog-bug</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/" rel="tag">bug</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/challenge/" rel="tag">challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/" rel="tag">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/muke/" rel="tag">muke</a><span class="tag-list-count">62</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JesseKkk</span>
+</div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc1292008b197b4" async="async"></script>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;"></span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;"></span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+</div>
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=CDtE7Ailzo7YHftFmp6vET7E-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'CDtE7Ailzo7YHftFmp6vET7E-MdYXbMMI',
+            'X-LC-Key': '0BVTsPhniSLUFYrpm77P07mj',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='255,69, 0' opacity='0.8' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/click.js"></script>
+
