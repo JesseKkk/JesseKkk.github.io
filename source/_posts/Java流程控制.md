@@ -1,34 +1,39 @@
 ---
 title: Java流程控制
 categories:
-  - Java基础
+  - Java入门
+  - 01_Java基本语法
 tags:
   - muke
 abbrlink: 13069
 date: 2019-11-24 20:37:22
 ---
 
-## 流程控制语句
+:star2:本文是Java流程控制的学习总结:star2:
+
+<!-- more -->
+
+## 1 流程控制语句
 
 流程控制语句包括：顺序、选择、循环
 
-### 选择语句
+### 1.1 选择语句
 
- - if语句
- - if-else语句
- - 多重if-else语句
- - 嵌套if-else语句
- - switch语句（switch判断表达式中的结果可以为整形和字符串）
+- if语句
+- if-else语句
+- 多重if-else语句
+- 嵌套if-else语句
+- switch语句（switch判断表达式中的结果可以为整形和字符串）
 
-### 循环语句
+### 1.2 循环语句
 
- - while循环
- - do-while循环
- - for循环
- - 嵌套循环
- - break语句和continue语句
+- while循环
+- do-while循环
+- for循环
+- 嵌套循环
+- break语句和continue语句
 
-## IntelliJ断点调试的快捷键
+## 2 IntelliJ断点调试的快捷键
 
 |快捷键|功能描述|
 |:--:|:--|
