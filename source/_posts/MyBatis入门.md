@@ -4,7 +4,7 @@ categories:
   - Java数据库开发与实战
   - 02_MyBatis从入门到进阶
 tags:
-  - muke
+  - imooc
 abbrlink: 13864
 date: 2020-04-07 10:15:44
 ---

@@ -6,7 +6,7 @@ categories:
   - Java入门
   - 02_Java面向对象
 tags:
-  - muke
+  - imooc
 ---
 
 :star2:本文是Java对象初识的学习总结:star2:

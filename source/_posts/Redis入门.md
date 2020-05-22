@@ -4,7 +4,7 @@ categories:
   - Java数据库开发与实战
   - 03_Redis数据库与Linux下项目部署
 tags:
-  - muke
+  - imooc
 abbrlink: 3392
 date: 2020-04-21 21:28:33
 ---

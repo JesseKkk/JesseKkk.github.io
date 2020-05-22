@@ -4,7 +4,7 @@ categories:
   - Java数据库开发与实战
   - 01_初识数据库操作
 tags:
-  - muke
+  - imooc
 abbrlink: 6999
 date: 2020-03-19 10:48:20
 ---
