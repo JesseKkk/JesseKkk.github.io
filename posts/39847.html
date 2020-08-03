@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="XiXYgjUtLuNSYitvkYIIatUzr5WXV9Jg29TN1Hs1Wbc">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","width":220,"display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="🌟本文是剑指Offer题解(Java版)汇总🌟">
+<meta name="keywords" content="algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指Offer题解(Java版)">
+<meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;39847.html">
+<meta property="og:site_name" content="Star">
+<meta property="og:description" content="🌟本文是剑指Offer题解(Java版)汇总🌟">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-08-03T02:35:41.532Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://jessekkk.github.io/posts/39847.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>剑指Offer题解(Java版) | Star</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Star</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jessekkk.github.io/posts/39847.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/set_log.png">
+      <meta itemprop="name" content="JesseKkk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Star">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          剑指Offer题解(Java版)
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-03 09:53:25 / 修改时间：02:35:41" itemprop="dateCreated datePublished" datetime="2020-08-03T09:53:25Z">2020-08-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/39847.html" class="post-meta-item leancloud_visitors" data-flag-title="剑指Offer题解(Java版)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>992</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>🌟本文是剑指Offer题解(Java版)汇总🌟</p>
+<a id="more"></a>
+<h2 id="1-题解"><a class="header-anchor" href="#1-题解">¶</a>1 题解</h2>
+<ul>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/03_1_%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">03_1_数组中重复的数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/03_2_%E4%B8%8D%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">03_2_不修改数组找出重复的数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/04_%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/Solution.java" target="_blank" rel="noopener">04_二维数组中的查找</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/05_%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/Solution.java" target="_blank" rel="noopener">05_替换空格</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/06_%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/Solution.java" target="_blank" rel="noopener">06_从尾到头打印链表</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/07_%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">07_重建二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/08_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">08_二叉树的下一个结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/09_%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/Solution.java" target="_blank" rel="noopener">09_用两个栈实现队列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/10_1_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/Solution.java" target="_blank" rel="noopener">10_1_斐波那契数列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/10_2_%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/Solution.java" target="_blank" rel="noopener">10_2_矩形覆盖</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/10_3_%E8%B7%B3%E5%8F%B0%E9%98%B6/Solution.java" target="_blank" rel="noopener">10_3_跳台阶</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/10_4_%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/Solution.java" target="_blank" rel="noopener">10_4_变态跳台阶</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/11_%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">11_旋转数组的最小数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/12_%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/Solution.java" target="_blank" rel="noopener">12_矩阵中的路径</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/13_%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/Solution.java" target="_blank" rel="noopener">13_机器人的运动范围</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/14_%E5%89%AA%E7%BB%B3%E5%AD%90/Solution.java" target="_blank" rel="noopener">14_剪绳子</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/15_%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/Solution.java" target="_blank" rel="noopener">15_二进制中1的个数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/16_%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/Solution.java" target="_blank" rel="noopener">16_数值的整数次方</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/17_%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/Solution.java" target="_blank" rel="noopener">17_打印从1到最大的n位数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/18_1_%E5%9C%A8O(1)%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9/Solution.java" target="_blank" rel="noopener">18_1_在O(1)时间内删除链表节点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/18_2_%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">18_2_删除链表中重复的结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/19_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/Solution.java" target="_blank" rel="noopener">19_正则表达式匹配</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/20_%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/Solution.java" target="_blank" rel="noopener">20_表示数值的字符串</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/21_%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2/Solution.java" target="_blank" rel="noopener">21_调整数组顺序使奇数位于偶数前面</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/22_%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">22_链表中倒数第K个结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/23_%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">23_链表中环的入口结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/24_%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/Solution.java" target="_blank" rel="noopener">24_反转链表</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/25_%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/Solution.java" target="_blank" rel="noopener">25_合并两个排序的链表</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/26_%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/Solution.java" target="_blank" rel="noopener">26_树的子结构</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/27_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/Solution.java" target="_blank" rel="noopener">27_二叉树的镜像</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/28_%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">28_对称的二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/29_%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/Solution.java" target="_blank" rel="noopener">29_顺时针打印矩阵</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/30_%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/Solution.java" target="_blank" rel="noopener">30_包含min函数的栈</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/31_%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/Solution.java" target="_blank" rel="noopener">31_栈的压入、弹出序列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/32_1%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">32_1从上往下打印二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/32_2%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C/Solution.java" target="_blank" rel="noopener">32_2把二叉树打印成多行</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/32_3%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">32_3按之字形顺序打印二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/33_%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/Solution.java" target="_blank" rel="noopener">33_二叉搜索树的后序遍历序列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/34_%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/Solution.java" target="_blank" rel="noopener">34_二叉树中和为某一值的路径</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/35_%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/Solution.java" target="_blank" rel="noopener">35_复杂链表的复制</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/36_%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/Solution.java" target="_blank" rel="noopener">36_二叉搜索树与双向链表</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/37_%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">37_序列化二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/38_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/Solution.java" target="_blank" rel="noopener">38_字符串的排列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/39_%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">39_数组中出现次数超过一半的数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/40_%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/Solution.java" target="_blank" rel="noopener">40_最小的K个数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/41_%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/Solution.java" target="_blank" rel="noopener">41_数据流中的中位数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/42_%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/Solution.java" target="_blank" rel="noopener">42_连续子数组的最大和</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/43_%E4%BB%8E1%E5%88%B0n%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/Solution.java" target="_blank" rel="noopener">43_从1到n整数中1出现的次数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/44_%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E7%9A%84%E6%9F%90%E4%B8%80%E4%BD%8D%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">44_数字序列中的某一位数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/45_%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/Solution.java" target="_blank" rel="noopener">45_把数组排成最小的数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/46_%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/Solution.java" target="_blank" rel="noopener">46_把数字翻译成字符串</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/47_%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/Solution.java" target="_blank" rel="noopener">47_礼物的最大价值</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/48_%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/Solution.java" target="_blank" rel="noopener">48_最长不含重复字符的子字符串</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/49_%E4%B8%91%E6%95%B0/Solution.java" target="_blank" rel="noopener">49_丑数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/50_%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6%E4%BD%8D%E7%BD%AE/Solution.java" target="_blank" rel="noopener">50_第一个只出现一次的字符位置</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/51_%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/Solution.java" target="_blank" rel="noopener">51_数组中的逆序对</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/52_%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">52_两个链表的第一个公共结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/53_%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/Solution.java" target="_blank" rel="noopener">53_数字在排序数组中出现的次数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/54_%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E7%AC%ACK%E4%B8%AA%E7%BB%93%E7%82%B9/Solution.java" target="_blank" rel="noopener">54_二叉查找树的第K个结点</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/55_1_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/Solution.java" target="_blank" rel="noopener">55_1_二叉树的深度</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/55_2_%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.java" target="_blank" rel="noopener">55_2_平衡二叉树</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/56_%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">56_数组中只出现一次的数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/57_1_%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/Solution.java" target="_blank" rel="noopener">57_1_和为S的两个数字</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/57_2_%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/Solution.java" target="_blank" rel="noopener">57_2_和为S的连续正数序列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/58_1_%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/Solution.java" target="_blank" rel="noopener">58_1_翻转单词顺序列</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/58_2_%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/Solution.java" target="_blank" rel="noopener">58_2_左旋转字符串</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/59_%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/Solution.java" target="_blank" rel="noopener">59_滑动窗口的最大值</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/60_n%E4%B8%AA%E9%AA%B0%E5%AD%90%E7%9A%84%E7%82%B9%E6%95%B0/Solution.java" target="_blank" rel="noopener">60_n个骰子的点数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/61_%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/Solution.java" target="_blank" rel="noopener">61_扑克牌顺子</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/62_%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/Solution.java" target="_blank" rel="noopener">62_圆圈中最后剩下的数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/63_%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/Solution.java" target="_blank" rel="noopener">63_股票的最大利润</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/64_%E6%B1%821%2B2%2B3%2B___%2Bn/Solution.java" target="_blank" rel="noopener">64_求1+2+3+___+n</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/65_%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/Solution.java" target="_blank" rel="noopener">65_不用加减乘除做加法</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/66_%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/Solution.java" target="_blank" rel="noopener">66_构建乘积数组</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/67_%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/Solution.java" target="_blank" rel="noopener">67_把字符串转换成整数</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/68_%E6%A0%91%E4%B8%AD%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/Solution.java" target="_blank" rel="noopener">68_树中两个节点的最低公共祖先</a></li>
+</ul>
+<h2 id="2-other"><a class="header-anchor" href="#2-other">¶</a>2 Other</h2>
+<ul>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/Solution.java" target="_blank" rel="noopener">Other_二分查找</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/Solution.java" target="_blank" rel="noopener">Other_冒泡排序</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/Solution.java" target="_blank" rel="noopener">Other_选择排序</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/Solution.java" target="_blank" rel="noopener">Other_插入排序</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/Solution.java" target="_blank" rel="noopener">Other_归并排序</a></li>
+<li><a href="https://github.com/JesseKkk/Coding-Interviews/blob/master/Other_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/Solution.java" target="_blank" rel="noopener">Other_快速排序</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="JesseKkk 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>JesseKkk
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://jessekkk.github.io/posts/39847.html" title="剑指Offer题解(Java版)">https://jessekkk.github.io/posts/39847.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/22250.html" rel="next" title="案例：从SSM到SpringBoot的校园商铺系统">
+                  <i class="fa fa-chevron-left"></i> 案例：从SSM到SpringBoot的校园商铺系统
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzM4Ny8yMzg4Nw=="></div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-题解"><span class="nav-text">1 题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-other"><span class="nav-text">2 Other</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="JesseKkk"
+    src="/images/set_log.png">
+  <p class="site-author-name" itemprop="name">JesseKkk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JesseKkk" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;JesseKkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/JesseKkk" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;JesseKkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Jesse_Kkk" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;Jesse_Kkk" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/JesseKkk1" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;JesseKkk1" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <h4 class="widget-title" style="font-size:20px;text-align:center;color:#000000;margin:20px 0 0px;">Tag Cloud</h4>
+          <div id="myCanvasContainer" class="widget tagcloud" style="font-size:20px;">
+              <canvas width="220" height="200" id="resCanvas" style="width=100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-bug/" rel="tag">blog-bug</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/" rel="tag">bug</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/challenge/" rel="tag">challenge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/" rel="tag">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/imooc/" rel="tag">imooc</a><span class="tag-list-count">70</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JesseKkk</span>
+</div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dc1292008b197b4" async="async"></script>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;"></span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;"></span>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+</div>
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=CDtE7Ailzo7YHftFmp6vET7E-MdYXbMMI')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'CDtE7Ailzo7YHftFmp6vET7E-MdYXbMMI',
+            'X-LC-Key': '0BVTsPhniSLUFYrpm77P07mj',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='255,69, 0' opacity='0.8' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/click.js"></script>
+
