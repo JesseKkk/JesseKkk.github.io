@@ -51,20 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="🌟2020年Java学习时间记录🌟">
-<meta name="keywords" content="challenge">
+  <meta name="description" content="🌟本文记录滑动窗口问题的实现🌟">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习时间_2020">
-<meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;16789.html">
+<meta property="og:title" content="滑动窗口问题的实现">
+<meta property="og:url" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;posts&#x2F;20701.html">
 <meta property="og:site_name" content="Star">
-<meta property="og:description" content="🌟2020年Java学习时间记录🌟">
+<meta property="og:description" content="🌟本文记录滑动窗口问题的实现🌟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;t001_03_01.png">
-<meta property="og:updated_time" content="2020-12-31T11:12:08.593Z">
+<meta property="og:updated_time" content="2021-01-07T12:48:41.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;jessekkk.github.io&#x2F;images&#x2F;t001_03_01.png">
 
-<link rel="canonical" href="https://jessekkk.github.io/posts/16789.html">
+<link rel="canonical" href="https://jessekkk.github.io/posts/20701.html">
 
 
 <script id="page-configurations">
@@ -78,7 +76,7 @@
   };
 </script>
 
-  <title>Java学习时间_2020 | Star</title>
+  <title>滑动窗口问题的实现 | Star</title>
   
 
 
@@ -192,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jessekkk.github.io/posts/16789.html">
+    <link itemprop="mainEntityOfPage" href="https://jessekkk.github.io/posts/20701.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/set_log.png">
@@ -205,7 +203,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          Java学习时间_2020
+          滑动窗口问题的实现
         </h2>
 
         <div class="post-meta">
@@ -216,7 +214,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-12-31 19:08:00 / 修改时间：11:12:08" itemprop="dateCreated datePublished" datetime="2020-12-31T19:08:00Z">2020-12-31</time>
+              <time title="创建时间：2021-01-07 20:39:00 / 修改时间：12:48:41" itemprop="dateCreated datePublished" datetime="2021-01-07T20:39:00Z">2021-01-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,14 +222,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A0%E6%B2%B9%EF%BC%8C%E5%B9%B4%E8%BD%BB%E4%BA%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">加油，年轻人</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/posts/16789.html" class="post-meta-item leancloud_visitors" data-flag-title="Java学习时间_2020" title="阅读次数">
+            <span id="/posts/20701.html" class="post-meta-item leancloud_visitors" data-flag-title="滑动窗口问题的实现" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -243,7 +241,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>76</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -262,18 +260,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>🌟2020年Java学习时间记录🌟</p>
+        <p>🌟本文记录滑动窗口问题的实现🌟</p>
 <a id="more"></a>
-<h2 id="1-时间"><a class="header-anchor" href="#1-时间">¶</a>1 时间</h2>
+<h2 id="1-滑动窗口的模板"><a class="header-anchor" href="#1-滑动窗口的模板">¶</a>1 滑动窗口的模板</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (right &lt; s.size()) &#123;`</span><br><span class="line">    <span class="comment">// 增大窗口</span></span><br><span class="line">    window.add(s[right]);</span><br><span class="line">    right++;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">        <span class="comment">// 缩小窗口</span></span><br><span class="line">        window.remove(s[left]);</span><br><span class="line">        left++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-实例"><a class="header-anchor" href="#2-实例">¶</a>2 实例</h2>
 <ul>
-<li>2020.01.01-2020.12.31</li>
+<li>Leetcode 3 无重复字符的最长子串长度</li>
 </ul>
-<h2 id="2-展示"><a class="header-anchor" href="#2-展示">¶</a>2 展示</h2>
-<p><img src="/images/t001_03_01.png" alt="图片"></p>
-<h2 id="3-给自己写的话"><a class="header-anchor" href="#3-给自己写的话">¶</a>3 给自己写的话</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == <span class="number">0</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Character,Integer&gt; map= <span class="keyword">new</span> HashMap&lt;Character,Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> max =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt; s.length(); ++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(s.charAt(i)))&#123;</span><br><span class="line">                left = Math.max(left,map.get(s.charAt(i))+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">            max=Math.max(max,i-left+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>完成1万小时10%的进度了。加油了！！！</li>
+<li>LeetCode 76 最小覆盖子串</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">minWindow</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s == <span class="string">""</span> || t == <span class="keyword">null</span> || t == <span class="string">""</span> || s.length() &lt; t.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//用来统计t中每个字符出现次数</span></span><br><span class="line">        <span class="keyword">int</span>[] needs = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];</span><br><span class="line">        <span class="comment">//用来统计滑动窗口中每个字符出现次数</span></span><br><span class="line">        <span class="keyword">int</span>[] window = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t.length(); i++) &#123;</span><br><span class="line">            needs[t.charAt(i)]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//目前有多少个字符</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用来记录最短需要多少个字符。</span></span><br><span class="line">        <span class="keyword">int</span> minLength = s.length() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (right &lt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">char</span> ch = s.charAt(right);</span><br><span class="line">            window[ch]++;</span><br><span class="line">            <span class="keyword">if</span> (needs[ch] &gt; <span class="number">0</span> &amp;&amp; needs[ch] &gt;= window[ch]) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//移动到不满足条件为止</span></span><br><span class="line">            <span class="keyword">while</span> (count == t.length()) &#123;</span><br><span class="line">                ch = s.charAt(left);</span><br><span class="line">                <span class="keyword">if</span> (needs[ch] &gt; <span class="number">0</span> &amp;&amp; needs[ch] &gt;= window[ch]) &#123;</span><br><span class="line">                    count--;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (right - left + <span class="number">1</span> &lt; minLength) &#123;</span><br><span class="line">                    minLength = right - left + <span class="number">1</span>;</span><br><span class="line">                    res = s.substring(left, right + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                window[ch]--;</span><br><span class="line">                left++;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            right++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -305,7 +304,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://jessekkk.github.io/posts/16789.html" title="Java学习时间_2020">https://jessekkk.github.io/posts/16789.html</a>
+    <a href="https://jessekkk.github.io/posts/20701.html" title="滑动窗口问题的实现">https://jessekkk.github.io/posts/20701.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -316,24 +315,21 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/challenge/" rel="tag"><i class="fa fa-tag"></i> challenge</a>
+              <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/posts/1180.html" rel="next" title="图解HTTP">
-                  <i class="fa fa-chevron-left"></i> 图解HTTP
+                <a href="/posts/22432.html" rel="next" title="背包问题的实现">
+                  <i class="fa fa-chevron-left"></i> 背包问题的实现
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/22432.html" rel="prev" title="背包问题的实现">
-                  背包问题的实现 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -377,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-时间"><span class="nav-text">1 时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-展示"><span class="nav-text">2 展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-给自己写的话"><span class="nav-text">3 给自己写的话</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-滑动窗口的模板"><span class="nav-text">1 滑动窗口的模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实例"><span class="nav-text">2 实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
